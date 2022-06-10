@@ -811,10 +811,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1238986074}
-    - target: {fileID: 274950876054045130, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
-      propertyPath: gravityModifier
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4613943441624476437, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
       propertyPath: m_RootOrder
       value: 6
