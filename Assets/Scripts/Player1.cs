@@ -18,6 +18,8 @@ public class Player1 : PhysicsObject
     public GameObject AttackBox { get => attackBox; set => attackBox = value; }
     public int AttackPower { get => attackPower; set => attackPower = value; }
 
+    private bool canDoubleJump;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,9 +38,9 @@ public class Player1 : PhysicsObject
         {
             transform.localScale = new Vector3(1, transform.localScale.y);
         }
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump"))
         {
-            velocity.y = verticalSpeed;
+            Jump();
         }
         if (Input.GetButtonDown("Fire1"))
         {
@@ -46,6 +48,25 @@ public class Player1 : PhysicsObject
         }
         Die();
     }
+
+    private void Jump()
+    {
+        if (grounded)
+        { 
+            velocity.y = verticalSpeed;
+            canDoubleJump = true;
+        }
+        else
+        {
+            if (canDoubleJump) 
+            {
+                canDoubleJump = false;
+                velocity.y = verticalSpeed;
+            }
+        }
+
+    }
+
     private void Die()
     {
         if (Health <= 0)
