@@ -306,6 +306,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 6961976416235224946, guid: 6e7a55124528a1b40a5e0b1a1ddce433, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6961976417844828761, guid: 6e7a55124528a1b40a5e0b1a1ddce433, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -607,7 +611,7 @@ MonoBehaviour:
   player:
   - {fileID: 1198278693}
   - {fileID: 4212580031052483012}
-  timetochange: 10
+  timetochange: 5
   timetext: {fileID: 138564036}
 --- !u!114 &1238986074 stripped
 MonoBehaviour:
@@ -1153,7 +1157,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9524acc01326f0f438ef1c4421a4c494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  minGroundNormalY: 0.65
+  gravityModifier: 3
+  speed: 7
+  horizontalSpeed: 5
+  verticalSpeed: 12
+  attackPower: 25
+  health: 100
+  attackDuration: 0.1
+  attackBox: {fileID: 4212580032189015635}
+  healthBar: {fileID: 1238986074}
 --- !u!4 &4212580032189015634
 Transform:
   m_ObjectHideFlags: 0

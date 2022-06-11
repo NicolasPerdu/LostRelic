@@ -73,7 +73,7 @@ public class Enemy : PhysicsObject
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == Player1.Instance.gameObject)
+        if (collision.gameObject == Player1.Instance.gameObject || collision.gameObject == Player2.Instance.gameObject)
         {
             PlayerHurt(EnemyCollisiondamage);
         }
@@ -83,5 +83,7 @@ public class Enemy : PhysicsObject
     {
         Player1.Instance.Health -= damage;
         Player1.Instance.UpdateUI();
+        Player2.Instance.Health -= damage;
+        Player2.Instance.UpdateUI();
     }
 }
