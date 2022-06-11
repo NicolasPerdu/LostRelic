@@ -19,11 +19,15 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //To show the time on screen 
         timetext.text =Mathf.Round (starttime).ToString();
         
+        //Will start the timer
          starttime -= Time.deltaTime;
+        //Check if the timer has reached to zero
         if(starttime<=0)
         {
+            //Check which player is active and then disable that active one and enable the other one
             if(player[0].activeInHierarchy)
             {
                 player[0].SetActive(false);
@@ -36,6 +40,7 @@ public class Timer : MonoBehaviour
                 player[0].SetActive(true);
 
             }
+            //Reset the timer
             starttime = timetochange;
 
 
