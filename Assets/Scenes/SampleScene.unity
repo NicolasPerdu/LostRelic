@@ -1256,6 +1256,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4613943441624476440, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
+      propertyPath: m_TagString
+      value: Player1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
 --- !u!1 &4212580031052483012
@@ -1273,7 +1277,7 @@ GameObject:
   - component: {fileID: 4212580031052483020}
   m_Layer: 7
   m_Name: Player (1)
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

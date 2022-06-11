@@ -71,13 +71,28 @@ public class Enemy : PhysicsObject
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject == Player1.Instance.gameObject)
         {
             PlayerHurt(EnemyCollisiondamage);
         }
         else if(collision.gameObject == Player2.Instance.gameObject)
+        {
+            PlayerHurt(EnemyCollisiondamage);
+        }
+
+    }*/
+
+
+    //Olteanu was here( i change player searc with player tag)
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player1")
+        {
+            PlayerHurt(EnemyCollisiondamage);
+        }
+        else if (collision.gameObject.tag == "Player2")
         {
             PlayerHurt(EnemyCollisiondamage);
         }
