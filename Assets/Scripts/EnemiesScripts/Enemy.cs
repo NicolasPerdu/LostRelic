@@ -90,17 +90,20 @@ public class Enemy : PhysicsObject
     {
         if (collision.gameObject.tag == "Player1")
         {
-            PlayerHurt(EnemyCollisiondamage);
+            Debug.Log(collision.gameObject.name);
+            //PlayerHurt(EnemyCollisiondamage);
         }
         else if (collision.gameObject.tag == "Player2")
         {
-            PlayerHurt(EnemyCollisiondamage);
+            //PlayerHurt(EnemyCollisiondamage);
+            Debug.Log(collision.gameObject.name);
         }
 
     }
 
     private static void PlayerHurt(int damage)
     {
+        
         Player1.Instance.Health -= damage;
         Player1.Instance.UpdateUI();
         Player2.Instance.Health -= damage;
