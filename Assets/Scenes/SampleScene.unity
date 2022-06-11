@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28948237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0.23, y: 1.06, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -220,10 +220,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f353ea993e89d94d9368c0ccfeb9e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  boundsBox: {fileID: 0}
+  target: {fileID: 1198278698}
+  minHeight: 0.13
+  maxHeight: 1
+  minWide: 0
+  maxWide: 0.23
   smoothness: 4
-  target: {fileID: 0}
   offset: {x: 0, y: 0, z: -10}
 --- !u!1001 &69542504
 PrefabInstance:
@@ -415,7 +417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000014781952, y: -54.399}
+  m_AnchoredPosition: {x: -0.000014781952, y: -54.399048}
   m_SizeDelta: {x: 580.251, y: 108.798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &152923977
@@ -660,6 +662,11 @@ PrefabInstance:
 --- !u!1 &1198278693 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4613943441624476440, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
+  m_PrefabInstance: {fileID: 274950876209310805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1198278698 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4613943441624476437, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
   m_PrefabInstance: {fileID: 274950876209310805}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1219319948
@@ -1193,6 +1200,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4613943441624476440, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
+      propertyPath: m_TagString
+      value: Player1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
 --- !u!1 &4212580031052483012
@@ -1210,7 +1221,7 @@ GameObject:
   - component: {fileID: 4212580031052483020}
   m_Layer: 7
   m_Name: Player (1)
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
