@@ -44,12 +44,12 @@ public class Player2 : PhysicsObject
 
 
     //singleton instantiation 
-    private static Player1 instance;
-    public static Player1 Instance
+    private static Player2 instance;
+    public static Player2 Instance
     {
         get
         {
-            if (instance == null) instance = GameObject.FindObjectOfType<Player1>();
+            if (instance == null) instance = GameObject.FindObjectOfType<Player2>();
             return instance;
         }
     }
