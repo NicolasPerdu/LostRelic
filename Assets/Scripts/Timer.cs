@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public GameObject[] player;
-    public float timetochange = 5f;
+    public float timetochange = 29f;
     private float timeInMinute = 5f;
     private float timeinSeconds ;
     private float secondsInMinute = 59f;
