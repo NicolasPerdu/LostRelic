@@ -73,10 +73,15 @@ public class Enemy : PhysicsObject
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == Player1.Instance.gameObject || collision.gameObject == Player2.Instance.gameObject)
+        if(collision.gameObject == Player1.Instance.gameObject)
         {
             PlayerHurt(EnemyCollisiondamage);
         }
+        else if(collision.gameObject == Player2.Instance.gameObject)
+        {
+            PlayerHurt(EnemyCollisiondamage);
+        }
+
     }
 
     private static void PlayerHurt(int damage)
