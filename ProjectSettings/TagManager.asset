@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Player2
+  - Player1
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - No Colliders
   - Water
   - UI
   - 
