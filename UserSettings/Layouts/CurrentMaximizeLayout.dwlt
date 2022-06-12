@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 15982
+  controlID: 17309
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -86,7 +86,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 15983
+  controlID: 17310
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 15984
+  controlID: 17311
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,8 +224,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7ebfffff
-      m_LastClickedID: -16514
+      m_SelectedIDs: a27dffff
+      m_LastClickedID: -33374
       m_ExpandedIDs: fab1ffffc8b6ffff12bfffff4eedffff7eeeffffc2eeffff9af9ffff42fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.057232656, y: -0.039826006, z: 0.0022890759, w: -0.99757004}
     speed: 2
-    m_Value: {x: -0.057232287, y: -0.03982575, z: 0.0022890612, w: -0.9975636}
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
     m_Target: 87.56343
     speed: 2
@@ -583,7 +583,7 @@ MonoBehaviour:
   m_Ortho:
     m_Target: 0
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -740,8 +740,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 7ebfffff
-    m_LastClickedInstanceID: -16514
+    m_SelectedInstanceIDs: a27dffff
+    m_LastClickedInstanceID: -33374
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
