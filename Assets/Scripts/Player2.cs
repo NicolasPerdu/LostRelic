@@ -24,6 +24,9 @@ public class Player2 : PhysicsObject
     //Use to disable the movement, Currently player 2 is disabled
     private bool canMove = false;
 
+    //To use the method of cameracontrol script
+    private CameraControll camControl;
+
 
 
     //singleton instantiation 
@@ -39,8 +42,9 @@ public class Player2 : PhysicsObject
 
     // Start is called before the first frame update
     void Start()
-    {   
-       
+    {
+        //To get the CameraControl script and assign our name to it
+        camControl = FindObjectOfType<CameraControll>();
         
     }
 
@@ -66,6 +70,9 @@ public class Player2 : PhysicsObject
             {
                 StartCoroutine(ActivateAttack());
             }
+
+            //If canMove is true than pass this player as argument to the UpdatePlayer function in cameracontrol script
+            camControl.UpdatePlayer(this.gameObject);
            
         }
 
