@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public GameObject[] player;
+  
     public float timetochange = 29f;
     private float timeInMinute = 5f;
     private float timeinSeconds ;
@@ -14,10 +14,15 @@ public class Timer : MonoBehaviour
     public Text timetext;
     public Text leveltimetext;
 
+    private bool swapPlayer;//To determine whether to swap the player or not
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         starttime = timetochange;
+        swapPlayer = false;//It will not start the swap until its false
         timeinSeconds = secondsInMinute;
     }
 
@@ -41,7 +46,8 @@ public class Timer : MonoBehaviour
         //Check if the timer has reached to zero
         if(starttime<=0)
         {
-
+            //As the timer is zero now it will trigger between true and false
+            swapPlayer = !swapPlayer;
             ChangePlayer();
 
         }
@@ -52,19 +58,9 @@ public class Timer : MonoBehaviour
 
     void ChangePlayer()
     {
-        //Check which player is active and then disable that active one and enable the other one
-        if (player[0].activeInHierarchy)
-        {
-            player[0].SetActive(false);
-            player[1].SetActive(true);
-
-        }
-        else if (player[1].activeInHierarchy)
-        {
-            player[1].SetActive(false);
-            player[0].SetActive(true);
-
-        }
+        //Passing the bool to both player script via the public method in those script
+        Player1.Instance.ActiveInScene(swapPlayer);
+        Player2.Instance.ActiveInScene(swapPlayer);
         //Reset the timer
         starttime = timetochange;
     }
