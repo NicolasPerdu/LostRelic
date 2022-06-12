@@ -659,11 +659,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c26115740356b14590e8d5016977a84, type: 3}
---- !u!1 &1198278693 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4613943441624476440, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
-  m_PrefabInstance: {fileID: 274950876209310805}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1198278698 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4613943441624476437, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
@@ -713,9 +708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18124f961905c0347a712de357a00126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player:
-  - {fileID: 1198278693}
-  - {fileID: 4212580031052483012}
   timetochange: 29
   timetext: {fileID: 138564036}
   leveltimetext: {fileID: 605788908}
@@ -1234,7 +1226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &4212580031052483014
 Rigidbody2D:
   serializedVersion: 4

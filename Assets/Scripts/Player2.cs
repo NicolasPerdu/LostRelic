@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 
 public class Player2 : PhysicsObject
 {
@@ -19,6 +18,13 @@ public class Player2 : PhysicsObject
       
     //used to enable double Jump
     private bool canDoubleJump;
+
+
+
+    //Use to disable the movement, Currently player 2 is disabled
+    private bool canMove = false;
+
+
 
     //singleton instantiation 
     private static Player2 instance;
@@ -41,24 +47,28 @@ public class Player2 : PhysicsObject
     // Update is called once per frame
     void Update()
     {
-        targetVelocity = new Vector2(Input.GetAxis("Horizontal") * horizontalSpeed, 0);
-        if (targetVelocity.x < -0.1)
+        if (canMove)
         {
-            transform.localScale = new Vector3(-1, transform.localScale.y);
+            targetVelocity = new Vector2(Input.GetAxis("Horizontal") * horizontalSpeed, 0);
+            if (targetVelocity.x < -0.1)
+            {
+                transform.localScale = new Vector3(-1, transform.localScale.y);
+            }
+            else if (targetVelocity.x > 0.1)
+            {
+                transform.localScale = new Vector3(1, transform.localScale.y);
+            }
+            if (Input.GetButtonDown("Jump"))
+            {
+                Jump();
+            }
+            if (Input.GetButtonDown("Fire1"))
+            {
+                StartCoroutine(ActivateAttack());
+            }
+           
         }
-        else if (targetVelocity.x > 0.1)
-        {
-            transform.localScale = new Vector3(1, transform.localScale.y);
-        }
-        if (Input.GetButtonDown("Jump"))
-        {
-            Jump();
-        }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            StartCoroutine(ActivateAttack());
-        }
-        
+
     }
     private void Jump()
     {
@@ -85,6 +95,14 @@ public class Player2 : PhysicsObject
         attackBox.SetActive(true);
         yield return new WaitForSeconds(attackDuration);
         attackBox.SetActive(false);
+    }
+
+    //Public function that will determine whether canmove is true or not via the passed in parameter
+    public void ActiveInScene(bool swapPlayer)
+    {
+        //As canMove is false in the start so it will be true when swapplayer is true and next  time it will false
+        canMove = swapPlayer;
+
     }
 
 }
