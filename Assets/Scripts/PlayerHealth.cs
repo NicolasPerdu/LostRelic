@@ -1,0 +1,45 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class PlayerHealth : MonoBehaviour
+{
+    [SerializeField] private Image healthBar;
+    [SerializeField] private int health;
+
+
+    public int Health { get => health; set => health = value; }
+    private Vector2 healthBarOriginalSize;
+   
+
+    //constrain Player max health to 100
+    private int maxHealth = 100;
+
+    void Start()
+    {
+        healthBarOriginalSize = healthBar.rectTransform.sizeDelta;
+        UpdateUI();
+    }
+     void Update()
+    {
+        Die();
+        UpdateUI();
+    }
+
+    // Update is called once per frame
+    private void Die()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene("SampleScene");
+        }
+    }
+    public void UpdateUI()
+    {
+        float healthBarSize = healthBarOriginalSize.x * ((float)Health / (float)maxHealth);
+        healthBar.rectTransform.sizeDelta = new Vector2(healthBarSize, healthBar.rectTransform.sizeDelta.y);
+    }
+}
