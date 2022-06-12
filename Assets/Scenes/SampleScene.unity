@@ -1148,6 +1148,14 @@ PrefabInstance:
       propertyPath: gravityModifier
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4351039115402742853, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351039115402742853, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1238986074}
     - target: {fileID: 4613943441624476437, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1202,7 +1210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4613943441624476440, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
       propertyPath: m_TagString
-      value: Player1
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40bb3a92e02cd8c44a3090760b291aa9, type: 3}
@@ -1218,10 +1226,11 @@ GameObject:
   - component: {fileID: 4212580031052483014}
   - component: {fileID: 4212580031052483015}
   - component: {fileID: 4212580031052483019}
+  - component: {fileID: 4212580031052483021}
   - component: {fileID: 4212580031052483020}
   m_Layer: 7
   m_Name: Player (1)
-  m_TagString: Player2
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1348,10 +1357,22 @@ MonoBehaviour:
   horizontalSpeed: 5
   verticalSpeed: 12
   attackPower: 25
-  health: 100
   attackDuration: 0.1
   attackBox: {fileID: 4212580032189015635}
+--- !u!114 &4212580031052483021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212580031052483012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729fa259d69557c4b8138a4615fd67a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   healthBar: {fileID: 2137983534}
+  health: 100
 --- !u!4 &4212580032189015634
 Transform:
   m_ObjectHideFlags: 0

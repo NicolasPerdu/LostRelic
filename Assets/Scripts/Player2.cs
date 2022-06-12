@@ -6,42 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class Player2 : PhysicsObject
 {
-    /* public float speed = 15f;
-
-
-
-
-     // Update is called once per frame
-     void //Update()
-     {
-         float movement = Input.GetAxis("Horizontal");
-         transform.Translate(Vector3.right * movement * Time.deltaTime * speed);
-
-
-     } */
-
+    
     [SerializeField] private float horizontalSpeed;
     [SerializeField] private float verticalSpeed;
     [SerializeField] private int attackPower;
-    [SerializeField] private int health;
+ 
     [SerializeField] private float attackDuration;
-    [SerializeField] private GameObject attackBox;
-    [SerializeField] private Image healthBar;
+    [SerializeField] private GameObject attackBox; 
 
-
-    public int Health { get => health; set => health = value; }
     public GameObject AttackBox { get => attackBox; set => attackBox = value; }
     public int AttackPower { get => attackPower; set => attackPower = value; }
-
-
-    private Vector2 healthBarOriginalSize;
-
+      
     //used to enable double Jump
     private bool canDoubleJump;
-
-    //constrain Player max health to 100
-    private int maxHealth = 100;
-
 
     //singleton instantiation 
     private static Player2 instance;
@@ -58,8 +35,7 @@ public class Player2 : PhysicsObject
     void Start()
     {   
        
-        healthBarOriginalSize = healthBar.rectTransform.sizeDelta;
-        UpdateUI();
+        
     }
 
     // Update is called once per frame
@@ -82,7 +58,7 @@ public class Player2 : PhysicsObject
         {
             StartCoroutine(ActivateAttack());
         }
-        Die();
+        
     }
     private void Jump()
     {
@@ -101,20 +77,9 @@ public class Player2 : PhysicsObject
         }
 
     }
-    public void UpdateUI()
-    {
-        float healthBarSize = healthBarOriginalSize.x * ((float)Health / (float)maxHealth);
-        healthBar.rectTransform.sizeDelta = new Vector2(healthBarSize, healthBar.rectTransform.sizeDelta.y);
-    }
+   
 
-    private void Die()
-    {
-        if (Health <= 0)
-        {
-            Destroy(gameObject);
-            SceneManager.LoadScene("SampleScene");
-        }
-    }
+    
     private IEnumerator ActivateAttack()
     {
         attackBox.SetActive(true);

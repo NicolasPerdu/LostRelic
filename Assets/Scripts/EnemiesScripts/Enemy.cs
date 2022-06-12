@@ -71,15 +71,15 @@ public class Enemy : PhysicsObject
         }
     }
 
-    /*private void OnCollisionEnter2D(Collision2D collision)
+   /* private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject == Player1.Instance.gameObject)
         {
-            PlayerHurt(EnemyCollisiondamage);
+            Player1Hurt(EnemyCollisiondamage);
         }
         else if(collision.gameObject == Player2.Instance.gameObject)
         {
-            PlayerHurt(EnemyCollisiondamage);
+            Player2Hurt(EnemyCollisiondamage);
         }
 
     }*/
@@ -88,25 +88,28 @@ public class Enemy : PhysicsObject
     //Olteanu was here( i change player searc with player tag)
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player1")
+        if (collision.collider.CompareTag("Player"))
         {
-            Debug.Log(collision.gameObject.name);
-            //PlayerHurt(EnemyCollisiondamage);
+            collision.collider.GetComponent<PlayerHealth>().Health -= EnemyCollisiondamage;
+            
         }
-        else if (collision.gameObject.tag == "Player2")
-        {
-            //PlayerHurt(EnemyCollisiondamage);
-            Debug.Log(collision.gameObject.name);
-        }
+        
 
     }
 
-    private static void PlayerHurt(int damage)
+   /*private static void Player1Hurt(int damage)
     {
         
         Player1.Instance.Health -= damage;
         Player1.Instance.UpdateUI();
+       
+    }
+    private static void Player2Hurt(int damage)
+    {
+
         Player2.Instance.Health -= damage;
         Player2.Instance.UpdateUI();
-    }
+
+    }*/
+
 }

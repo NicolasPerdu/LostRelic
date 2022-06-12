@@ -10,24 +10,16 @@ public class Player1 : PhysicsObject
     [SerializeField] private float horizontalSpeed;
     [SerializeField] private float verticalSpeed;
     [SerializeField] private int attackPower;
-    [SerializeField] private int health;
+    
     [SerializeField] private float attackDuration;
     [SerializeField] private GameObject attackBox;
-    [SerializeField] private Image healthBar;
-
-
-    public int Health { get => health; set => health = value; }
+      
     public GameObject AttackBox { get => attackBox; set => attackBox = value; }
     public int AttackPower { get => attackPower; set => attackPower = value; }
-
-
-    private Vector2 healthBarOriginalSize;
+      
 
     //used to enable double Jump
-    private bool canDoubleJump;
-
-    //constrain Player max health to 100
-    private int maxHealth = 100;
+    private bool canDoubleJump;    
 
 
     //singleton instantiation 
@@ -44,8 +36,7 @@ public class Player1 : PhysicsObject
     // Start is called before the first frame update
     void Start()
     {
-        healthBarOriginalSize = healthBar.rectTransform.sizeDelta;
-        UpdateUI();
+        
     }
 
     // Update is called once per frame
@@ -68,7 +59,7 @@ public class Player1 : PhysicsObject
         {
             StartCoroutine(ActivateAttack());
         }
-        Die();
+        
     }
     private void Jump()
     {
@@ -87,20 +78,9 @@ public class Player1 : PhysicsObject
         }
 
     }
-    public void UpdateUI()
-    {
-        float healthBarSize = healthBarOriginalSize.x * ((float)Health / (float)maxHealth);
-        healthBar.rectTransform.sizeDelta = new Vector2(healthBarSize, healthBar.rectTransform.sizeDelta.y);
-    }
+    
 
-    private void Die()
-    {
-        if (Health <= 0)
-        {
-            Destroy(gameObject);
-            SceneManager.LoadScene("SampleScene");
-        }
-    }
+    
     private IEnumerator ActivateAttack()
     {
         attackBox.SetActive(true);
