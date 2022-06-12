@@ -1317,7 +1317,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1.1
-  m_Text: "Neeraj Jangir\nNicolas Perdu\nOlteanu\n  Alexandru Daniel "
+  m_Text: "Neeraj Jangir\nNicolas Perdu\nOlteanu\n Hellhunter"
 --- !u!222 &1649952363
 CanvasRenderer:
   m_ObjectHideFlags: 0
