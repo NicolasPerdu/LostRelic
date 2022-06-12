@@ -22,6 +22,9 @@ public class Player1 : PhysicsObject
 
     //Use to disable the movement according to the timer
     private bool canMove = true;
+
+    //To use the method of cameracontrol script
+    private CameraControll cameControl;
  
 
 
@@ -39,7 +42,8 @@ public class Player1 : PhysicsObject
     // Start is called before the first frame update
     void Start()
     {
-        
+        //To get the CameraControl script and assign our name to it
+        cameControl = FindObjectOfType<CameraControll>();
     }
 
     // Update is called once per frame
@@ -65,6 +69,10 @@ public class Player1 : PhysicsObject
             {
                 StartCoroutine(ActivateAttack());
             }
+            
+            //If canMove is true than pass this player as argument to the UpdatePlayer function in cameracontrol script
+
+            cameControl.UpdatePlayer(this.gameObject);
             
         }
 

@@ -14,7 +14,7 @@ public class CameraControll : MonoBehaviour
     public float smoothness;
     public Vector3 offset;
 
-    private void Start()
+   /* private void Start()
     {
         if (target is null)
         {
@@ -22,6 +22,7 @@ public class CameraControll : MonoBehaviour
         }
         lastPos = transform.position;
     }
+   */
     private void Update()
     {
 
@@ -32,5 +33,10 @@ public class CameraControll : MonoBehaviour
 
         transform.position = new Vector3(Mathf.Clamp(smoothedPosition.x, minWide, maxWide), Mathf.Clamp(smoothedPosition.y, minHeight, maxHeight), transform.position.z);
         lastPos = transform.position;
+    }
+
+    public void UpdatePlayer(GameObject _target)
+    {
+        target = _target.transform;
     }
 }
