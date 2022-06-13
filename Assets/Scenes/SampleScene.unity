@@ -1959,7 +1959,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2189,3 +2189,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponDamage: 50
+--- !u!1001 &6314890960424531695
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1989040420418299458, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
+      propertyPath: m_Name
+      value: LightPrototype
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989040420418299471, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989040420418299471, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989040420418299471, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989040420418299471, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989040420418299471, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989040420418299471, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989040420418299471, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989040420418299471, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989040420418299471, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989040420418299471, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989040420418299471, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314890959897084725, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
+      propertyPath: m_Name
+      value: LightShape
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 85d09ce5ce7f1f949b7a35a0495ca7ae, type: 3}
