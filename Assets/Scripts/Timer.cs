@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Timer : MonoBehaviour
 {
+    public GameObject  levelwon;
   
     public float timetochange = 29f;
     private float timeInMinute = 5f;
@@ -23,6 +23,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         portalCount = 0;
+        levelwon.SetActive(false);
         starttime = timetochange;
         swapPlayer = false;//It will not start the swap until its false
         timeinSeconds = secondsInMinute;
@@ -55,6 +56,10 @@ public class Timer : MonoBehaviour
             swapPlayer = !swapPlayer;
             ChangePlayer();
 
+        }
+        if(portalCount==2)
+        {
+            levelwon.SetActive(true);
         }
 
     }
