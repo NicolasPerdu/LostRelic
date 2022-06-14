@@ -73,6 +73,10 @@ public class IntroductionPlayer : PhysicsObject
             camControl.UpdatePlayer(this.gameObject);
 
         }
+        else
+        {
+            targetVelocity = Vector2.zero;
+        }
 
     }
     private void Jump()
