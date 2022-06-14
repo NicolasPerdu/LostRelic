@@ -1,10 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class Timer : MonoBehaviour
 {
-    public GameObject  levelwon;
   
     public float timetochange = 29f;
     private float timeInMinute = 5f;
@@ -13,7 +13,6 @@ public class Timer : MonoBehaviour
     private float starttime;
     public Text timetext;
     public Text leveltimetext;
-    private int portalCount = 0; 
 
     private bool swapPlayer;//To determine whether to swap the player or not
 
@@ -22,8 +21,6 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        portalCount = 0;
-        levelwon.SetActive(false);
         starttime = timetochange;
         swapPlayer = false;//It will not start the swap until its false
         timeinSeconds = secondsInMinute;
@@ -31,8 +28,7 @@ public class Timer : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        
+    {
         timeinSeconds -=Time.deltaTime;
         if (timeinSeconds <= 0)
         {
@@ -40,12 +36,10 @@ public class Timer : MonoBehaviour
             timeinSeconds = secondsInMinute;
 
         }
-        if(portalCount <2)
-            leveltimetext.text = (Mathf.Round (timeInMinute) + ":" + Mathf.Round(timeinSeconds)).ToString();
+        leveltimetext.text = (Mathf.Round (timeInMinute) + ":" + Mathf.Round(timeinSeconds)).ToString();
 
         //To show the time on screen 
-        if(portalCount<1)
-            timetext.text =Mathf.Round (starttime).ToString();
+        timetext.text =Mathf.Round (starttime).ToString();
         
         //Will start the timer
          starttime -= Time.deltaTime;
@@ -56,10 +50,6 @@ public class Timer : MonoBehaviour
             swapPlayer = !swapPlayer;
             ChangePlayer();
 
-        }
-        if(portalCount==2)
-        {
-            levelwon.SetActive(true);
         }
 
     }
@@ -73,13 +63,6 @@ public class Timer : MonoBehaviour
         Player2.Instance.ActiveInScene(swapPlayer);
         //Reset the timer
         starttime = timetochange;
-    }
-
-
-    public void PortalReached(int triggerCount)
-    {
-        portalCount += triggerCount;
-        Debug.Log(portalCount);
     }
     
 }

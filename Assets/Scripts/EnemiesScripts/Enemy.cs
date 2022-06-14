@@ -29,15 +29,6 @@ public class Enemy : PhysicsObject
     // Update is called once per frame
     void Update()
     {
-        if (targetVelocity.x < -0.1)
-        {
-            transform.localScale = new Vector3(1, transform.localScale.y);
-        }
-        else if (targetVelocity.x > 0.1)
-        {
-            transform.localScale = new Vector3(-1, transform.localScale.y);
-        }
-
         targetVelocity = new Vector2(horizontalSpeed *direction, 0);
 
         //check right ledge
@@ -46,20 +37,17 @@ public class Enemy : PhysicsObject
         if (rightLedgeRayCastHit.collider == null) 
         {
             direction = -1;
-            //transform.localScale = new Vector2(1, 1);
         }
         rightWallRayCastHit = Physics2D.Raycast(new Vector2(transform.position.x , transform.position.y + rayCastOffest.y), Vector2.right, rayCastLenght,rayCastLayerMask);
         if (rightWallRayCastHit.collider != null)
         {
             direction = -1;
-            //transform.localScale = new Vector2(1, 1);
         }
 
         leftWallRayCastHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + rayCastOffest.y), Vector2.left, rayCastLenght, rayCastLayerMask);
         if (leftWallRayCastHit.collider != null)
         {
             direction = 1;
-            //transform.localScale = new Vector2(-1, 1);
 
         }
 
@@ -69,7 +57,6 @@ public class Enemy : PhysicsObject
         if (leftLedgeRayCastHit.collider == null)
         {
             direction = 1;
-            //transform.localScale = new Vector2(-1, 1);
 
         }
 
