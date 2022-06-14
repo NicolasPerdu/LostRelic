@@ -1,13 +1,10 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 
 public class Timer : MonoBehaviour
 {
     public GameObject  levelwon;
-    public Animator wonclip;
   
     public float timetochange = 29f;
     private float timeInMinute = 5f;
@@ -43,39 +40,28 @@ public class Timer : MonoBehaviour
             timeinSeconds = secondsInMinute;
 
         }
-        
-        
-        leveltimetext.text = (Mathf.Round (timeInMinute) + ":" + Mathf.Round(timeinSeconds)).ToString();
+        if(portalCount <2)
+            leveltimetext.text = (Mathf.Round (timeInMinute) + ":" + Mathf.Round(timeinSeconds)).ToString();
 
-        //To show the time on screen
-           timetext.text =Mathf.Round (starttime).ToString();
+        //To show the time on screen 
+        if(portalCount<1)
+            timetext.text =Mathf.Round (starttime).ToString();
         
-        //Use the timer when none of the player has reached the portal
-        if(portalCount<=0)
-            starttime -= Time.deltaTime;
+        //Will start the timer
+         starttime -= Time.deltaTime;
         //Check if the timer has reached to zero
-        if(starttime<=0 )
+        if(starttime<=0)
         {
-            SetBoolToSwap();
+            //As the timer is zero now it will trigger between true and false
+            swapPlayer = !swapPlayer;
+            ChangePlayer();
 
         }
         if(portalCount==2)
         {
-            //Active levelwon image when both players has reached the portals
             levelwon.SetActive(true);
-            wonclip.Play("LevelWin");
-            StartCoroutine(RestartLevel());
-            
-            
         }
-        
 
-    }
-    void SetBoolToSwap()
-    {
-        //As the timer is zero now it will trigger between true and false
-        swapPlayer = !swapPlayer;
-        ChangePlayer();
     }
 
     
@@ -86,8 +72,7 @@ public class Timer : MonoBehaviour
         Player1.Instance.ActiveInScene(swapPlayer);
         Player2.Instance.ActiveInScene(swapPlayer);
         //Reset the timer
-        if(portalCount!=1)
-            starttime = timetochange;
+        starttime = timetochange;
     }
 
 
@@ -95,19 +80,6 @@ public class Timer : MonoBehaviour
     {
         portalCount += triggerCount;
         Debug.Log(portalCount);
-        if (portalCount == 1)
-        {
-            SetBoolToSwap();
-            //To disable the swap timer when one player has reached the portal  
-            timetext.enabled = false;
-
-        }
-    }
-
-    private IEnumerator RestartLevel()
-    {
-        yield return new WaitForSeconds(3.0f);
-        SceneManager.LoadScene(0);
     }
     
 }
