@@ -481,6 +481,7 @@ GameObject:
   - component: {fileID: 138564038}
   - component: {fileID: 138564037}
   - component: {fileID: 138564036}
+  - component: {fileID: 138564039}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -501,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.74686223, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -509,7 +510,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ebf8ac3f1b248a841816b0d83bc969e3, type: 3}
     m_FontSize: 72
     m_FontStyle: 1
     m_BestFit: 0
@@ -550,6 +551,21 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000014781952, y: -54.398926}
   m_SizeDelta: {x: 580.251, y: 108.798}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &138564039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138564035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 3.46, y: 5.48}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &152923977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -987,7 +1003,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1628560453
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3eaf3b45e3e05db489e11f681e2e0c2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1164,6 +1180,7 @@ GameObject:
   - component: {fileID: 605788907}
   - component: {fileID: 605788909}
   - component: {fileID: 605788908}
+  - component: {fileID: 605788910}
   m_Layer: 5
   m_Name: LevelTimer
   m_TagString: Untagged
@@ -1204,7 +1221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5132677, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1212,7 +1229,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ebf8ac3f1b248a841816b0d83bc969e3, type: 3}
     m_FontSize: 72
     m_FontStyle: 1
     m_BestFit: 0
@@ -1233,6 +1250,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605788906}
   m_CullTransparentMesh: 1
+--- !u!114 &605788910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605788906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 5.77, y: 3.3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &659392367
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,7 +2690,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1628560453
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3eaf3b45e3e05db489e11f681e2e0c2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
