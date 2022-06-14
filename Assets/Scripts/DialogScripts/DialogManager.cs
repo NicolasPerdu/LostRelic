@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-
     public Image actorImage;
     public Text actorName;
     public Text messageText;
@@ -17,6 +16,8 @@ public class DialogManager : MonoBehaviour
     private Message[] currentMessages;
     private Actor[] currentActors;
     private int activeMessage = 0;
+    private const float animationDuration = 0.5f;
+    private Vector3 originalDialogBoxSize = new Vector3(34, 4, 1);
 
     //used to display messages
     public void OpenDialogue(Message[] messages,Actor[] actors)
@@ -25,9 +26,18 @@ public class DialogManager : MonoBehaviour
         currentActors = actors;
         activeMessage = 0;
         isActive = true;
-
         Debug.Log("Started conv" + messages.Length);
         DisplayMessage();
+        // used to resize the dialog box
+        backgroundBox.LeanScale(originalDialogBoxSize, animationDuration).setEaseInOutExpo();
+    }
+
+    private void AnimateTextColor() 
+    {
+        //make text transparent
+        LeanTween.textAlpha(messageText.rectTransform, 0,0);
+        //make text visible
+        LeanTween.textAlpha(messageText.rectTransform, 1, 0.5f);
     }
 
     private void DisplayMessage() 
@@ -38,6 +48,7 @@ public class DialogManager : MonoBehaviour
         Actor actorToDisplay = currentActors[messageToDisplay.actorID];
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.actorImage;
+        AnimateTextColor();
     }
 
     private void NextMessage() 
@@ -51,13 +62,14 @@ public class DialogManager : MonoBehaviour
         {
             Debug.Log("Conversation ended");
             isActive = false;
+            backgroundBox.LeanScale(Vector3.zero, animationDuration).setEaseInOutExpo();
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        backgroundBox.transform.localScale = Vector3.zero;
     }
 
     // Update is called once per frame

@@ -49,7 +49,11 @@ public class Player1 : PhysicsObject
     // Update is called once per frame
     void Update()
     {
-       //The update will only work if the canMove is true currently it is set true coz its the first player
+        if (DialogManager.isActive == true)
+        {
+            return;
+        }
+        //The update will only work if the canMove is true currently it is set true coz its the first player
         if (canMove)
         {
             targetVelocity = new Vector2(Input.GetAxis("Horizontal") * horizontalSpeed, 0);
