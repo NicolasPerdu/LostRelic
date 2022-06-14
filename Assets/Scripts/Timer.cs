@@ -1,10 +1,13 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class Timer : MonoBehaviour
 {
     public GameObject  levelwon;
+    public Animator wonclip;
   
     public float timetochange = 29f;
     private float timeInMinute = 5f;
@@ -60,6 +63,10 @@ public class Timer : MonoBehaviour
         {
             //Active levelwon image when both players has reached the portals
             levelwon.SetActive(true);
+            wonclip.Play("LevelWin");
+            StartCoroutine(RestartLevel());
+            
+            
         }
         
 
@@ -95,6 +102,12 @@ public class Timer : MonoBehaviour
             timetext.enabled = false;
 
         }
+    }
+
+    private IEnumerator RestartLevel()
+    {
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene(0);
     }
     
 }
