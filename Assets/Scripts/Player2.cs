@@ -19,8 +19,6 @@ public class Player2 : PhysicsObject
     //used to enable double Jump
     private bool canDoubleJump;
 
-
-
     //Use to disable the movement, Currently player 2 is disabled
     private bool canMove = false;
 
@@ -46,11 +44,13 @@ public class Player2 : PhysicsObject
         //To get the CameraControl script and assign our name to it
         camControl = FindObjectOfType<CameraControll>();
         
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (canMove)
         {
             targetVelocity = new Vector2(Input.GetAxis("Horizontal") * horizontalSpeed, 0);
@@ -74,6 +74,10 @@ public class Player2 : PhysicsObject
             //If canMove is true than pass this player as argument to the UpdatePlayer function in cameracontrol script
             camControl.UpdatePlayer(this.gameObject);
            
+        }
+        else
+        {
+            targetVelocity = Vector2.zero;
         }
 
     }
