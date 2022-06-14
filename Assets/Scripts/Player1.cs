@@ -18,7 +18,8 @@ public class Player1 : PhysicsObject
       
 
     //used to enable double Jump
-    private bool canDoubleJump;    
+    private bool canDoubleJump;
+   
 
     //Use to disable the movement according to the timer
     private bool canMove = true;
@@ -44,11 +45,13 @@ public class Player1 : PhysicsObject
     {
         //To get the CameraControl script and assign our name to it
         cameControl = FindObjectOfType<CameraControll>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+       
        //The update will only work if the canMove is true currently it is set true coz its the first player
         if (canMove)
         {
@@ -74,6 +77,10 @@ public class Player1 : PhysicsObject
 
             cameControl.UpdatePlayer(this.gameObject);
             
+        }
+        else
+        {
+            targetVelocity = Vector2.zero;
         }
 
     }
