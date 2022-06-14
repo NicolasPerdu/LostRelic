@@ -64,7 +64,7 @@ public class DialogManager : MonoBehaviour
     void Update()
     {
         //left alt is configured for the moment
-        if (Input.GetButtonDown("Fire2")) 
+        if (Input.GetButtonDown("Fire2") && isActive) 
         {
             NextMessage();
         }
