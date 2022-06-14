@@ -23,7 +23,7 @@ public class CameraControll : MonoBehaviour
         lastPos = transform.position;
     }
    */
-    private void Update()
+    private void FixedUpdate()
     {
 
         Vector3 desirePosition = target.position + offset;
