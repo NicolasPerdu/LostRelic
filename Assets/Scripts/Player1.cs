@@ -10,6 +10,8 @@ public class Player1 : PhysicsObject
     [SerializeField] private float verticalSpeed;
     [SerializeField] private int attackPower;
     
+    
+    
     [SerializeField] private float attackDuration;
     [SerializeField] private GameObject attackBox;
       
@@ -107,8 +109,9 @@ public class Player1 : PhysicsObject
     private IEnumerator ActivateAttack()
     {
         attackBox.SetActive(true);
-        yield return new WaitForSeconds(attackDuration);
+         yield return new WaitForSeconds(attackDuration);
         attackBox.SetActive(false);
+        
     }
 
     //Public function that will determine whether canmove is true or not via the passed in parameter
