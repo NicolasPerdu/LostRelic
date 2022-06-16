@@ -50,7 +50,10 @@ public class Player2 : PhysicsObject
     // Update is called once per frame
     void Update()
     {
-        
+        if (DialogManager.isActive == true)
+        {
+            return;
+        }
         if (canMove)
         {
             targetVelocity = new Vector2(Input.GetAxis("Horizontal") * horizontalSpeed, 0);
