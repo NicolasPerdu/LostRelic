@@ -8,7 +8,7 @@ public class CanMovePlayer2 : MonoBehaviour
 
     public void MoveAgain()
     {
-        player.canMove = true;
+        player.canAttack = true;
     }
 
     public void AttackEnemy()

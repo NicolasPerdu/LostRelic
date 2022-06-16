@@ -22,6 +22,7 @@ public class Player2 : PhysicsObject
 
     //Use to disable the movement, Currently player 2 is disabled
     public bool canMove = false;
+    public bool canAttack = true;
 
     //To use the method of cameracontrol script
     private CameraControll camControl;
@@ -55,31 +56,38 @@ public class Player2 : PhysicsObject
         {
             return;
         }
-        if (canMove)
+        if (canAttack)
         {
-            targetVelocity = new Vector2(Input.GetAxis("Horizontal") * horizontalSpeed, 0);
-            if (targetVelocity.x < -0.1)
+            if (canMove)
             {
-                transform.localScale = new Vector3(-1, transform.localScale.y);
-            }
-            else if (targetVelocity.x > 0.1)
-            {
-                transform.localScale = new Vector3(1, transform.localScale.y);
-            }
-            if (Input.GetButtonDown("Jump"))
-            {
-                Jump();
-            }
-            if (Input.GetButtonDown("Fire1"))
-            {
-                _anim.SetTrigger("attack");
-                // StartCoroutine(ActivateAttack());
-                canMove = false;
-            }
+                targetVelocity = new Vector2(Input.GetAxis("Horizontal") * horizontalSpeed, 0);
+                if (targetVelocity.x < -0.1)
+                {
+                    transform.localScale = new Vector3(-1, transform.localScale.y);
+                }
+                else if (targetVelocity.x > 0.1)
+                {
+                    transform.localScale = new Vector3(1, transform.localScale.y);
+                }
+                if (Input.GetButtonDown("Jump"))
+                {
+                    Jump();
+                }
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    _anim.SetTrigger("attack");
+                    // StartCoroutine(ActivateAttack());
+                   canAttack = false;
+                }
 
-            //If canMove is true than pass this player as argument to the UpdatePlayer function in cameracontrol script
-            camControl.UpdatePlayer(this.gameObject);
-           
+                //If canMove is true than pass this player as argument to the UpdatePlayer function in cameracontrol script
+                camControl.UpdatePlayer(this.gameObject);
+
+            }
+            else
+            {
+                targetVelocity = Vector2.zero;
+            }
         }
         else
         {
