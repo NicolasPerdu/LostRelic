@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Olteanu Scene");
         }
     }
     public void UpdateUI()

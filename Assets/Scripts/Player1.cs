@@ -11,7 +11,7 @@ public class Player1 : PhysicsObject
     [SerializeField] private int attackPower;
     
     [SerializeField] private float attackDuration;
-    [SerializeField] private GameObject attackBox;
+    [SerializeField] public GameObject attackBox;
       
     public GameObject AttackBox { get => attackBox; set => attackBox = value; }
     public int AttackPower { get => attackPower; set => attackPower = value; }
@@ -19,10 +19,11 @@ public class Player1 : PhysicsObject
 
     //used to enable double Jump
     private bool canDoubleJump;
-   
+    public Animator _anim;
+
 
     //Use to disable the movement according to the timer
-    private bool canMove = true;
+    public bool canMove = true;
 
     //To use the method of cameracontrol script
     private CameraControll cameControl;
@@ -73,7 +74,15 @@ public class Player1 : PhysicsObject
             }
             if (Input.GetButtonDown("Fire1"))
             {
-                StartCoroutine(ActivateAttack());
+                _anim.SetTrigger("attack");
+                // StartCoroutine(ActivateAttack());
+                canMove = false;
+            }
+            if(Input.GetKeyDown(KeyCode.U))
+            {
+                _anim.SetTrigger("attack");
+                // StartCoroutine(ActivateAttack());
+                canMove = false;
             }
             
             //If canMove is true than pass this player as argument to the UpdatePlayer function in cameracontrol script
@@ -85,6 +94,9 @@ public class Player1 : PhysicsObject
         {
             targetVelocity = Vector2.zero;
         }
+
+        _anim.SetBool("jump", grounded);
+        _anim.SetFloat("move", Mathf.Abs(targetVelocity.x));
 
     }
     private void Jump()

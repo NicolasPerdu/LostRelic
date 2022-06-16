@@ -16,6 +16,9 @@ public class Enemy : PhysicsObject
     private RaycastHit2D leftLedgeRayCastHit;
     private RaycastHit2D rightWallRayCastHit;
     private RaycastHit2D leftWallRayCastHit;
+    public GameObject deathEffect, spider, lightEnemy;
+    private CapsuleCollider2D capsuleCollider;
+    
 
     public int EnemyCollisiondamage { get => enemyCollisiondamage; set => enemyCollisiondamage = value; }
     public int Health { get => health; set => health = value; }
@@ -23,7 +26,7 @@ public class Enemy : PhysicsObject
     // Start is called before the first frame update
     void Start()
     {
-        
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -73,14 +76,20 @@ public class Enemy : PhysicsObject
 
         }
 
-        Die();
+        //Die();
     }
 
-    private void Die()
+    public void Die()
     {
         if (Health <= 0)
         {
-            Destroy(gameObject);
+            spider.SetActive(false);
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            lightEnemy.SetActive(false);
+            capsuleCollider.enabled = false;
+           Destroy(gameObject,5f);
+            //Destroy(deathEffect, 3f);
+            
         }
     }
 
@@ -101,12 +110,18 @@ public class Enemy : PhysicsObject
     //Olteanu was here( i change player searc with player tag)
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.collider.CompareTag("Player1"))
         {
             collision.collider.GetComponent<PlayerHealth>().Health -= EnemyCollisiondamage;
             
         }
-        
+
+        if (collision.collider.CompareTag("Player2"))
+        {
+            collision.collider.GetComponent<PlayerHealth>().Health -= EnemyCollisiondamage;
+
+        }
+
 
     }
 
