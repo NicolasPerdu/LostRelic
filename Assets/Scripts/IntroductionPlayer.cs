@@ -16,6 +16,7 @@ public class IntroductionPlayer : PhysicsObject
 
     //used to enable double Jump
     private bool canDoubleJump;
+    public Animator _anim;
 
 
 
@@ -66,7 +67,9 @@ public class IntroductionPlayer : PhysicsObject
             }
             if (Input.GetButtonDown("Fire1"))
             {
-                StartCoroutine(ActivateAttack());
+                _anim.SetTrigger("attack");
+                //StartCoroutine(ActivateAttack());
+                canMove = false;
             }
 
             //If canMove is true than pass this player as argument to the UpdatePlayer function in cameracontrol script
@@ -78,6 +81,9 @@ public class IntroductionPlayer : PhysicsObject
             targetVelocity = Vector2.zero;
         }
 
+        _anim.SetBool("jump", grounded);
+        _anim.SetFloat("move",Mathf.Abs(targetVelocity.x));
+        
     }
     private void Jump()
     {
