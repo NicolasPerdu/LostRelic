@@ -14,7 +14,7 @@ TagManager:
   - No Colliders
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 2082776635
+    locked: 0
+  - name: Effects
+    uniqueID: 1404997523
     locked: 0

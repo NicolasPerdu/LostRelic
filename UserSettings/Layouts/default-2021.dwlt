@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 107
+  controlID: 168
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 108
+  controlID: 169
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 147
+  controlID: 77
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -218,15 +218,15 @@ MonoBehaviour:
     y: 801
     width: 816
     height: 506
-  m_MinSize: {x: 201, y: 221}
+  m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 13}
   - {fileID: 17}
   - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -298,8 +298,8 @@ MonoBehaviour:
     y: 0
     width: 572
     height: 1307
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -366,7 +366,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -644,9 +644,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 20.415121, y: -0.82085246, z: -0.02782286}
+    m_Target: {x: 13.560824, y: -2.8368201, z: -0.097679876}
     speed: 2
-    m_Value: {x: 20.415121, y: -0.82085246, z: -0.02782286}
+    m_Value: {x: 13.55748, y: -3.0281396, z: -0.102723695}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -697,9 +697,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.111344
+    m_Target: 10.704239
     speed: 2
-    m_Value: 7.111344
+    m_Value: 11.208627
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -717,7 +717,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.2827485, y: 0.10105076, z: -0.029968979, w: -0.953386}
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -908,7 +908,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -315206
+  m_LastSelectedObjectID: 27938
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -940,9 +940,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ba30fbff
-      m_LastClickedID: -315206
-      m_ExpandedIDs: 54ecfaff6af2faffbe30fbff1031fbff0414fcff3279fcffd079fcffd479fcffd879fcffdc79fcffe079fcffe879fcffec79fcfff079fcfff879fcfffc79fcff007afcffa67afcffa87afcffc27efcfff07ffcff9e87fcffc28dfcff4a8ffcfff6a6fcff16a7fcff68acfcffd2b2fcff1ab6fcffceeefcff628dfeff668dfeff6a8dfeff6e8dfeff728dfeffc8f8ffffccf8ffffd0f8ffffd8f8ffffdcf8ffffe0f8ffffe8f8ffffecf8fffff8f8fffffcf8ffff00f9ffff08f9ffff0cf9ffff10f9ffff14f9ffff20f9ffff24f9ffff28f9ffff34f9ffff38f9ffff3cf9ffff44f9ffff48f9ffff4cf9ffffbef9ffffac6c0000f86c0000e03d0100303f0100cc460100da4701003c48010032490100cc4a0100da4b0100
+      m_SelectedIDs: aaf5ffff
+      m_LastClickedID: -2646
+      m_ExpandedIDs: 80f8fffff4f9fffffef9ffff2cfbffff1c6c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1007,22 +1007,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/EnemiesScripts
+    - Assets/Prefabs/Effects
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/EnemiesScripts
+  - Assets/Prefabs/Effects
   m_LastFoldersGridSize: -1
   m_LastProjectPath: G:\SA INVATAM UNITY\LostRelic
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d2780000
-    m_LastClickedID: 30930
-    m_ExpandedIDs: 00000000cc740000ce740000d0740000d2740000d47400006676000080760000847600009c880000148c0000
+    m_SelectedIDs: 9a750000
+    m_LastClickedID: 30106
+    m_ExpandedIDs: 00000000527500005475000056750000587500005a7500005c7500005e750000607500006275000064750000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1050,7 +1050,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000cc740000ce740000d0740000d2740000d4740000
+    m_ExpandedIDs: 00000000527500005475000056750000587500005a7500005c7500005e750000607500006275000064750000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1141,7 +1141,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 33
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

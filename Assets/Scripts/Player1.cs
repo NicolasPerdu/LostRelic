@@ -24,6 +24,7 @@ public class Player1 : PhysicsObject
 
     //Use to disable the movement according to the timer
     public bool canMove = true;
+    public bool canAttack = true;
 
     //To use the method of cameracontrol script
     private CameraControll cameControl;
@@ -57,38 +58,45 @@ public class Player1 : PhysicsObject
             return;
         }
         //The update will only work if the canMove is true currently it is set true coz its the first player
-        if (canMove)
+        if (canAttack)
         {
-            targetVelocity = new Vector2(Input.GetAxis("Horizontal") * horizontalSpeed, 0);
-            if (targetVelocity.x < -0.1)
+            if (canMove)
             {
-                transform.localScale = new Vector3(-1, transform.localScale.y);
-            }
-            else if (targetVelocity.x > 0.1)
-            {
-                transform.localScale = new Vector3(1, transform.localScale.y);
-            }
-            if (Input.GetButtonDown("Jump"))
-            {
-                Jump();
-            }
-            if (Input.GetButtonDown("Fire1"))
-            {
-                _anim.SetTrigger("attack");
-                // StartCoroutine(ActivateAttack());
-                canMove = false;
-            }
-            if(Input.GetKeyDown(KeyCode.U))
-            {
-                _anim.SetTrigger("attack");
-                // StartCoroutine(ActivateAttack());
-                canMove = false;
-            }
-            
-            //If canMove is true than pass this player as argument to the UpdatePlayer function in cameracontrol script
+                targetVelocity = new Vector2(Input.GetAxis("Horizontal") * horizontalSpeed, 0);
+                if (targetVelocity.x < -0.1)
+                {
+                    transform.localScale = new Vector3(-1, transform.localScale.y);
+                }
+                else if (targetVelocity.x > 0.1)
+                {
+                    transform.localScale = new Vector3(1, transform.localScale.y);
+                }
+                if (Input.GetButtonDown("Jump"))
+                {
+                    Jump();
+                }
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    _anim.SetTrigger("attack");
+                    // StartCoroutine(ActivateAttack());
+                    canAttack = false;
+                }
+                if (Input.GetKeyDown(KeyCode.U))
+                {
+                    _anim.SetTrigger("attack");
+                    // StartCoroutine(ActivateAttack());
+                    canMove = false;
+                }
 
-            cameControl.UpdatePlayer(this.gameObject);
-            
+                //If canMove is true than pass this player as argument to the UpdatePlayer function in cameracontrol script
+
+                cameControl.UpdatePlayer(this.gameObject);
+
+            }
+            else
+            {
+                targetVelocity = Vector2.zero;
+            }
         }
         else
         {

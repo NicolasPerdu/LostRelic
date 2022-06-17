@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour
     public Text timetext;
     public Text leveltimetext;
     private int portalCount = 0; 
+   
 
     private bool swapPlayer;//To determine whether to swap the player or not
 
@@ -22,6 +23,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+              
         portalCount = 0;
         levelwon.SetActive(false);
         starttime = timetochange;
@@ -52,6 +54,7 @@ public class Timer : MonoBehaviour
         //Check if the timer has reached to zero
         if(starttime<=0)
         {
+            
             //As the timer is zero now it will trigger between true and false
             swapPlayer = !swapPlayer;
             ChangePlayer();
@@ -71,6 +74,14 @@ public class Timer : MonoBehaviour
         //Passing the bool to both player script via the public method in those script
         Player1.Instance.ActiveInScene(swapPlayer);
         Player2.Instance.ActiveInScene(swapPlayer);
+        /*if (playerChange)
+        {
+            Player1.Instance.ActiveInScene(swapPlayer);
+        }
+        else
+        {
+            Player2.Instance.ActiveInScene(swapPlayer);
+        }*/
         //Reset the timer
         starttime = timetochange;
     }
