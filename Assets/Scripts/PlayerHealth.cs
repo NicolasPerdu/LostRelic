@@ -12,7 +12,8 @@ public class PlayerHealth : MonoBehaviour
 
     public int Health { get => health; set => health = value; }
     private Vector2 healthBarOriginalSize;
-   
+       
+      
 
     //constrain Player max health to 100
     private int maxHealth = 100;
@@ -21,11 +22,15 @@ public class PlayerHealth : MonoBehaviour
     {
         healthBarOriginalSize = healthBar.rectTransform.sizeDelta;
         UpdateUI();
+        
+        
+        
     }
      void Update()
     {
         Die();
         UpdateUI();
+        
     }
 
     // Update is called once per frame
@@ -41,5 +46,20 @@ public class PlayerHealth : MonoBehaviour
     {
         float healthBarSize = healthBarOriginalSize.x * ((float)Health / (float)maxHealth);
         healthBar.rectTransform.sizeDelta = new Vector2(healthBarSize, healthBar.rectTransform.sizeDelta.y);
+    }
+
+    public void PlayerHurt(int damage)
+    {
+        health -= damage;
+                
+
+    }
+    public void HealthBarActive(bool isActive)
+    {
+        if(isActive)
+        {
+           //
+        }
+        
     }
 }
