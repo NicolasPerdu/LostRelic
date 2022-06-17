@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,8 +11,10 @@ public class Player2Health : MonoBehaviour
 
     public int Health { get => health; set => health = value; }
     private Vector2 healthBarOriginalSize;
-       
-      
+    private Rigidbody2D rb;
+    public float fallforce = 10.0f;
+
+
 
     //constrain Player max health to 100
     private int maxHealth = 100;
@@ -21,9 +24,10 @@ public class Player2Health : MonoBehaviour
     {
         healthBarOriginalSize = healthBar.rectTransform.sizeDelta;
         UpdateUI();
-        
-        
-        
+        rb = GetComponent<Rigidbody2D>();
+
+
+
     }
      void Update()
     {
@@ -50,8 +54,15 @@ public class Player2Health : MonoBehaviour
     public void PlayerHurt(int damage)
     {
         health -= damage;
-                
+        rb.velocity = Vector2.right*fallforce;
+        StartCoroutine(ResetVelocity());
 
+
+    }
+    IEnumerator ResetVelocity()
+    {
+        yield return new WaitForSeconds(1.00f);
+        rb.velocity = Vector2.zero;
     }
     public void HealthBarActive(bool isActive)
     {

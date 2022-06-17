@@ -322,19 +322,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 8190a8bd5626c75409615c2c5de91e2e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 8190a8bd5626c75409615c2c5de91e2e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 8190a8bd5626c75409615c2c5de91e2e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 8190a8bd5626c75409615c2c5de91e2e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 8190a8bd5626c75409615c2c5de91e2e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -896,6 +896,22 @@ PrefabInstance:
     - target: {fileID: 6961976416233102233, guid: 6e7a55124528a1b40a5e0b1a1ddce433, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961976416235224944, guid: 6e7a55124528a1b40a5e0b1a1ddce433, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961976416235224944, guid: 6e7a55124528a1b40a5e0b1a1ddce433, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961976416235224944, guid: 6e7a55124528a1b40a5e0b1a1ddce433, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961976416235224946, guid: 6e7a55124528a1b40a5e0b1a1ddce433, type: 3}
+      propertyPath: m_Name
+      value: Player_1_healthbar
       objectReference: {fileID: 0}
     - target: {fileID: 6961976416235224946, guid: 6e7a55124528a1b40a5e0b1a1ddce433, type: 3}
       propertyPath: m_IsActive
@@ -2499,9 +2515,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 653865897100788765, guid: 3711010c399d988458773a9701814b42, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 17.299805
+      objectReference: {fileID: 0}
     - target: {fileID: 653865897193835311, guid: 3711010c399d988458773a9701814b42, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 6.0998535
+      value: 6.0996094
+      objectReference: {fileID: 0}
+    - target: {fileID: 653865897362129838, guid: 3711010c399d988458773a9701814b42, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 55.302734
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3711010c399d988458773a9701814b42, type: 3}
@@ -3108,8 +3132,8 @@ GameObject:
   m_Component:
   - component: {fileID: 558013141}
   - component: {fileID: 558013140}
+  - component: {fileID: 558013142}
   - component: {fileID: 558013139}
-  - component: {fileID: 558013137}
   - component: {fileID: 558013135}
   m_Layer: 8
   m_Name: Player2
@@ -3140,20 +3164,6 @@ MonoBehaviour:
   _anim: {fileID: 46576923}
   canMove: 0
   canAttack: 1
---- !u!114 &558013137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558013134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729fa259d69557c4b8138a4615fd67a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 2137983534}
-  health: 100
 --- !u!70 &558013139
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3198,7 +3208,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558013134}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -7.9, y: -3.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3207,7 +3217,22 @@ Transform:
   - {fileID: 46576920}
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &558013142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558013134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74210dfb7742c504ab813d2211c0b992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 2137983534}
+  health: 100
+  fallforce: 2
 --- !u!1 &583727501
 GameObject:
   m_ObjectHideFlags: 0
@@ -5336,7 +5361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelwon: {fileID: 1005642559}
-  timetochange: 10
+  timetochange: 20
   timetext: {fileID: 138564036}
   leveltimetext: {fileID: 605788908}
 --- !u!114 &1219319951
@@ -7781,6 +7806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogButton
       objectReference: {fileID: 0}
+    - target: {fileID: 2995857730730546800, guid: 3f47397fbb3954945b160c0a1be20dea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2995857730730546815, guid: 3f47397fbb3954945b160c0a1be20dea, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8745,7 +8774,7 @@ GameObject:
   - component: {fileID: 2137983535}
   - component: {fileID: 2137983534}
   m_Layer: 5
-  m_Name: HealthBar (1)
+  m_Name: Player_2_healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8766,10 +8795,10 @@ RectTransform:
   m_Father: {fileID: 404327267}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 55, y: -170}
-  m_SizeDelta: {x: 594.8, y: 39}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -648, y: -104}
+  m_SizeDelta: {x: 594.7998, y: 39}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2137983534
 MonoBehaviour:
@@ -8784,7 +8813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6621573, g: 0.9433962, b: 0.85364276, a: 1}
+  m_Color: {r: 0.4016198, g: 0.6509434, b: 0.57027984, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8994,6 +9023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1238986074}
   health: 100
+  fallforce: 2
 --- !u!114 &4613943440614032565
 MonoBehaviour:
   m_ObjectHideFlags: 0

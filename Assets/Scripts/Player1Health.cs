@@ -12,6 +12,8 @@ public class Player1Health : MonoBehaviour
 
     public int Health { get => health; set => health = value; }
     private Vector2 healthBarOriginalSize;
+    private Rigidbody2D rb;
+    public float fallforce = 10.0f;
        
       
 
@@ -23,6 +25,7 @@ public class Player1Health : MonoBehaviour
     {
         healthBarOriginalSize = healthBar.rectTransform.sizeDelta;
         UpdateUI();
+        rb = GetComponent<Rigidbody2D>();
        
 
 
@@ -54,9 +57,18 @@ public class Player1Health : MonoBehaviour
     public void PlayerHurt(int damage)
     {
         health -= damage;
+        rb.velocity = Vector2.left*fallforce;
+        StartCoroutine(ResetVelocity());
                 
 
     }
+
+    IEnumerator ResetVelocity()
+    {
+        yield return new WaitForSeconds(1.00f);
+        rb.velocity = Vector2.zero;
+    }
+
     public void HealthBarActive(bool isActive)
     {
 
