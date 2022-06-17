@@ -20,12 +20,12 @@ public class Spikes : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player1"))
         {
-            collision.collider.GetComponent<PlayerHealth>().Health -= collisionDamage;
+            collision.collider.GetComponent<Player1Health>().Health -= collisionDamage;
 
         }
         if (collision.collider.CompareTag("Player2"))
         {
-            collision.collider.GetComponent<PlayerHealth>().Health -= collisionDamage;
+            collision.collider.GetComponent<Player2Health>().Health -= collisionDamage;
 
         }
 

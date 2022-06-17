@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
+public class Player1Health : MonoBehaviour
 {
     [SerializeField] private Image healthBar;
     [SerializeField] private int health;
@@ -17,14 +17,17 @@ public class PlayerHealth : MonoBehaviour
 
     //constrain Player max health to 100
     private int maxHealth = 100;
+   
 
     void Start()
     {
         healthBarOriginalSize = healthBar.rectTransform.sizeDelta;
         UpdateUI();
-        
-        
-        
+       
+
+
+
+
     }
      void Update()
     {
@@ -56,10 +59,15 @@ public class PlayerHealth : MonoBehaviour
     }
     public void HealthBarActive(bool isActive)
     {
-        if(isActive)
-        {
-           //
-        }
+
         
+        if (!isActive)
+        {
+            healthBar.color = Color.clear;
+        }
+        else
+        {
+            healthBar.color = Color.yellow;
+        }
     }
 }
