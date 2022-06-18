@@ -26,6 +26,7 @@ public class Player2 : PhysicsObject
 
     //To use the method of cameracontrol script
     private CameraControll camControl;
+    private Player2Health health2;
 
 
 
@@ -45,6 +46,7 @@ public class Player2 : PhysicsObject
     {
         //To get the CameraControl script and assign our name to it
         camControl = FindObjectOfType<CameraControll>();
+        health2 = GetComponent<Player2Health>();
         
         
     }
@@ -52,6 +54,7 @@ public class Player2 : PhysicsObject
     // Update is called once per frame
     void Update()
     {
+        health2.HealthBarActive(canMove);
         if (DialogManager.isActive == true)
         {
             return;
@@ -93,6 +96,7 @@ public class Player2 : PhysicsObject
         {
             targetVelocity = Vector2.zero;
         }
+
 
         _anim.SetBool("jump", grounded);
         _anim.SetFloat("move", Mathf.Abs(targetVelocity.x));
