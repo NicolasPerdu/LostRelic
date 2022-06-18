@@ -73,6 +73,7 @@ public class Player1 : PhysicsObject
                 }
                 if (Input.GetButtonDown("Jump"))
                 {
+                    FindObjectOfType<AudioManager>().PlaySFX(5);
                     Jump();
                 }
                 if (Input.GetButtonDown("Fire1"))
