@@ -1375,7 +1375,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &96852509
 CapsuleCollider2D:
@@ -5422,7 +5422,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-
 --- !u!1001 &1159288936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5484,7 +5483,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd71972a33e100742974271b2f454cc8, type: 3}
-
 --- !u!1 &1164907565
 GameObject:
   m_ObjectHideFlags: 0
@@ -7484,7 +7482,7 @@ Transform:
   - {fileID: 1651183732}
   - {fileID: 392386978}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1694728718
 PrefabInstance:
@@ -9354,7 +9352,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.01}
   m_Size: {x: 0.64, y: 1.44}
   m_Direction: 0
 --- !u!50 &4888894066208950095

@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 33145
+  controlID: 34318
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 33146
+  controlID: 34319
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 33147
+  controlID: 34320
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -647,7 +647,7 @@ MonoBehaviour:
   - {fileID: 9}
   - {fileID: 10}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -726,8 +726,8 @@ MonoBehaviour:
     y: 0
     width: 312
     height: 722
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -764,8 +764,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 62750400
-      m_LastClickedID: 292194
+      m_SelectedIDs: 
+      m_LastClickedID: 0
       m_ExpandedIDs: f4d4fdff5a14feff461bfeffa830fefff443feff96effeff9aeffeff9eeffeffa2effeffa6effeffaeeffeffb2effeffb6effeffc2effeffc6effeffa2f1feffbefbfeff2a87ffff3a87ffff7288ffff2acdffffacd5ffffe2e5ffffd0edffffd2edffff78f8ffffa2bb0100f8bb0100de4e020008510200f8db030048dc03000ee70300dae7030078e803007c73040096730400dc730400
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -925,8 +925,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 62750400
-    m_LastClickedInstanceID: 292194
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: ba620000ee610000287b00004e84000038790000e0760000a0230200
     m_RenameOverlay:
