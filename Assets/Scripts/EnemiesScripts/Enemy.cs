@@ -121,16 +121,17 @@ public class Enemy : PhysicsObject
     //Olteanu was here( i change player search with player tag)
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        direction = -direction;
         if (collision.collider.CompareTag("Player1"))
         {
-            direction = -direction;
+           
             collision.collider.GetComponent<Player1Health>().PlayerHurt(enemyCollisiondamage);
             
         }
 
         if (collision.collider.CompareTag("Player2"))
         {
-            direction = -direction;
+            
             collision.collider.GetComponent<Player2Health>().PlayerHurt(enemyCollisiondamage);
 
         }
