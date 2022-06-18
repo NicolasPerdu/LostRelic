@@ -14,6 +14,9 @@ public class Player1Health : MonoBehaviour
     private Vector2 healthBarOriginalSize;
     private Rigidbody2D rb;
     public float fallforce = 10.0f;
+    private bool canTakeDamage=true;
+    private Color newColor;
+   
        
       
 
@@ -26,9 +29,8 @@ public class Player1Health : MonoBehaviour
         healthBarOriginalSize = healthBar.rectTransform.sizeDelta;
         UpdateUI();
         rb = GetComponent<Rigidbody2D>();
-       
-
-
+        newColor = healthBar.color;             
+             
 
 
     }
@@ -56,9 +58,12 @@ public class Player1Health : MonoBehaviour
 
     public void PlayerHurt(int damage)
     {
-        health -= damage;
-        rb.velocity = new Vector2(-1, 1) * fallforce;
-        StartCoroutine(ResetVelocity());
+        if (canTakeDamage)
+        {
+            health -= damage;
+            rb.velocity = new Vector2(-1, 1) * fallforce;
+            StartCoroutine(ResetVelocity());
+        }
                 
 
     }
@@ -71,12 +76,15 @@ public class Player1Health : MonoBehaviour
 
     public void HealthBarActive(bool isActive)
     {
-
-        
+        canTakeDamage = isActive;
         if (!isActive)
         {
-            healthBar.color = Color.clear;
+          
+            newColor.a = 0.2f;
+            healthBar.color = newColor;
+
         }
+    
         else
         {
             healthBar.color = Color.yellow;
