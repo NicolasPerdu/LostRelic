@@ -1564,6 +1564,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &96852509
@@ -6749,7 +6750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee11258e7b63e0499fd2005e14a801b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bul: {fileID: 5760138404926110600, guid: 365ac78d5c8136942b5830b04c030dbf, type: 3}
+  bul: {fileID: 7901046320637140264, guid: 1bc26ea9e2df59d46aa519dfd559036b, type: 3}
 --- !u!50 &1244728941
 Rigidbody2D:
   serializedVersion: 4
@@ -8708,7 +8709,9 @@ Transform:
   - {fileID: 1651183732}
   - {fileID: 392386978}
   m_Father: {fileID: 0}
+
   m_RootOrder: 19
+
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1694728718
 PrefabInstance:
@@ -10866,7 +10869,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.01}
   m_Size: {x: 0.64, y: 1.44}
   m_Direction: 0
 --- !u!50 &4888894066208950095
