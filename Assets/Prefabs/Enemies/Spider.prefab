@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 6570430969667530024}
   - component: {fileID: 6570430969667530027}
   - component: {fileID: 8912626936286836443}
-  - component: {fileID: 1982222165776489738}
+  - component: {fileID: 6098269807451050792}
   m_Layer: 6
   m_Name: Spider
   m_TagString: Untagged
@@ -950,8 +950,8 @@ MonoBehaviour:
   spider: {fileID: 5319468813655827603}
   lightEnemy: {fileID: 153349901}
   wallRight: {fileID: 5526611829417645705}
---- !u!61 &1982222165776489738
-BoxCollider2D:
+--- !u!70 &6098269807451050792
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -963,19 +963,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06753898, y: -0.075603426}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.135078, y: 0.3891245}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.18346429, y: -0.17338377}
+  m_Size: {x: 0.8669286, y: 0.8669286}
+  m_Direction: 0
 --- !u!1 &6965130056346902514
 GameObject:
   m_ObjectHideFlags: 0
