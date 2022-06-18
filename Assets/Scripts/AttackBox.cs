@@ -22,9 +22,8 @@ public class AttackBox : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Enemy>()) //FindObjectOfType<Enemy>().gameObject)
         {
-            collision.gameObject.GetComponent<Enemy>().Health -= weaponDamage + Player1.Instance.AttackPower ;
-            collision.gameObject.GetComponent<Enemy>().Die();
-             
+            //collision.gameObject.GetComponent<Enemy>().Health -= weaponDamage + Player1.Instance.AttackPower ;
+            //collision.gameObject.GetComponent<Enemy>().Die(); 
         }
 
     }

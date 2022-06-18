@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CanMovePlayer1 : MonoBehaviour
+public class CanMovePlayer : MonoBehaviour
 {
-    public Player1 player;
+    public PlayerController player;
 
     public void MoveAgain()
     {
@@ -39,8 +39,4 @@ public class CanMovePlayer1 : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().PlaySFX(7);
     }
-   /*private void OnTriggerEnter2D(Collider2D other)
-    {
-        other.gameObject.GetComponent<Enemy>().Die();
-    }*/
 }

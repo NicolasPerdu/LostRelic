@@ -18,16 +18,10 @@ public class Spikes : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player1"))
+        if (collision.collider.CompareTag("Player"))
         {
-            collision.collider.GetComponent<Player1Health>().PlayerHurt(collisionDamage);
+            collision.collider.GetComponent<HealthController>().PlayerHurt(collisionDamage);
 
         }
-        if (collision.collider.CompareTag("Player2"))
-        {
-            collision.collider.GetComponent<Player2Health>().PlayerHurt(collisionDamage);
-
-        }
-
     }
 }

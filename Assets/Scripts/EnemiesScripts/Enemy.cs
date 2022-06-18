@@ -122,14 +122,9 @@ public class Enemy : PhysicsObject
     private void OnCollisionEnter2D(Collision2D collision)
     {
         direction = -direction;
-        if (collision.collider.CompareTag("Player1"))
+        if (collision.collider.CompareTag("Player"))
         {
-            collision.collider.GetComponent<Player1Health>().PlayerHurt(enemyCollisiondamage);
-        }
-
-        if (collision.collider.CompareTag("Player2"))
-        {
-            collision.collider.GetComponent<Player2Health>().PlayerHurt(enemyCollisiondamage);
+            collision.collider.GetComponent<HealthController>().PlayerHurt(enemyCollisiondamage);
         }
     }
 

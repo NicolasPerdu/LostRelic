@@ -6,7 +6,7 @@ public class Timer : MonoBehaviour
 {
     public GameObject  levelwon;
   
-    public float timetochange = 29f;
+    public float timetochange;
     private float timeInMinute = 5f;
     private float timeinSeconds ;
     private float secondsInMinute = 59f;
@@ -21,20 +21,15 @@ public class Timer : MonoBehaviour
 
     private bool swapPlayer;//To determine whether to swap the player or not
 
-
-
-    // Start is called before the first frame update
     void Start()
-    {
-              
+    {    
         portalCount = 0.0f;
         levelwon.SetActive(false);
         starttime = timetochange;
-        swapPlayer = false;//It will not start the swap until its false
+        swapPlayer = false;
         timeinSeconds = secondsInMinute;
     }
 
-    // Update is called once per frame
     void Update()
     {   
         timeinSeconds -=Time.deltaTime;
@@ -44,27 +39,19 @@ public class Timer : MonoBehaviour
             timeinSeconds = secondsInMinute;
 
         }
-        if(portalCount <2)
-            leveltimetext.text = (Mathf.Round (timeInMinute) + ":" + Mathf.Round(timeinSeconds)).ToString();
 
-        //To show the time on screen 
-        if (portalCount < 1)
-        {
-            timetext.text = Mathf.Round(starttime).ToString();
-            //Will start the timer
-            starttime -= Time.deltaTime;
-        }
+        leveltimetext.text = (Mathf.Round (timeInMinute) + ":" + Mathf.Round(timeinSeconds)).ToString();
+
+        timetext.text = Mathf.Round(starttime).ToString();
+        starttime -= Time.deltaTime;
        
-        //Check if the timer has reached to zero
         if(starttime<=0)
         {
-            
-            //As the timer is zero now it will trigger between true and false
             swapPlayer = !swapPlayer;
+            starttime = timetochange;
             ChangePlayer();
-            
-
         }
+
         if(portalCount>=2)
         {
             levelwon.SetActive(true);
@@ -74,8 +61,6 @@ public class Timer : MonoBehaviour
             starttime = 0;
             portalCount = 1.5f;
         }
-        
-
     }
 
     
@@ -85,17 +70,12 @@ public class Timer : MonoBehaviour
         if (swapPlayer) {
             hellworld.SetActive(false);
             normalworld.SetActive(true);
-            normalplayer.GetComponent<Player2>().ActiveInScene(true);
+            normalplayer.GetComponent<PlayerController>().ActiveInScene(true);
         } else {
             hellworld.SetActive(true);
             normalworld.SetActive(false);
-            hellplayer.GetComponent<Player1>().ActiveInScene(true);
+            hellplayer.GetComponent<PlayerController>().ActiveInScene(true);
         }
-        //Player1.Instance.ActiveInScene(swapPlayer);
-        //Player2.Instance.ActiveInScene(swapPlayer);
-
-        //Reset the timer
-        starttime = timetochange;
     }
 
 
@@ -103,7 +83,6 @@ public class Timer : MonoBehaviour
     {
         portalCount += triggerCount;
         Debug.Log(portalCount);
-        
     }
     
 }
