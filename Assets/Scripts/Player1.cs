@@ -28,6 +28,7 @@ public class Player1 : PhysicsObject
 
     //To use the method of cameracontrol script
     private CameraControll cameControl;
+    private Player1Health health1;
  
 
 
@@ -47,12 +48,14 @@ public class Player1 : PhysicsObject
     {
         //To get the CameraControl script and assign our name to it
         cameControl = FindObjectOfType<CameraControll>();
+        health1 = GetComponent<Player1Health>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        health1.HealthBarActive(canMove);
         if (DialogManager.isActive == true)
         {
             return;
