@@ -13,8 +13,11 @@ public class Timer : MonoBehaviour
     private float starttime;
     public Text timetext;
     public Text leveltimetext;
-    private float portalCount = 0.0f; 
-   
+    private float portalCount = 0.0f;
+    public GameObject hellworld;
+    public GameObject normalworld;
+    public GameObject hellplayer;
+    public GameObject normalplayer;
 
     private bool swapPlayer;//To determine whether to swap the player or not
 
@@ -34,7 +37,6 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        
         timeinSeconds -=Time.deltaTime;
         if (timeinSeconds <= 0)
         {
@@ -80,11 +82,18 @@ public class Timer : MonoBehaviour
 
     void ChangePlayer()
     {
-        //Passing the bool to both player script via the public method in those script
-        Player1.Instance.ActiveInScene(swapPlayer);
-        Player2.Instance.ActiveInScene(swapPlayer);
+        if (swapPlayer) {
+            hellworld.SetActive(false);
+            normalworld.SetActive(true);
+            normalplayer.GetComponent<Player2>().ActiveInScene(true);
+        } else {
+            hellworld.SetActive(true);
+            normalworld.SetActive(false);
+            hellplayer.GetComponent<Player1>().ActiveInScene(true);
+        }
+        //Player1.Instance.ActiveInScene(swapPlayer);
+        //Player2.Instance.ActiveInScene(swapPlayer);
 
-        
         //Reset the timer
         starttime = timetochange;
     }

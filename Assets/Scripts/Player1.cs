@@ -141,7 +141,7 @@ public class Player1 : PhysicsObject
     public void ActiveInScene(bool swapPlayer)
     {
         //As canMove is true in the start so it will be false when swapplayer is true and next  time it will true
-        canMove = !swapPlayer;
+        canMove = swapPlayer;
        
     }
 }

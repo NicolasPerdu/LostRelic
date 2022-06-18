@@ -35,14 +35,12 @@ public class Egg : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<PolygonCollider2D>().enabled = false;
 
-            Debug.Log(transform.childCount);
-
             for (int i = 0; i < transform.childCount; i++) {
-                Debug.Log("up: " + i);
                 transform.GetChild(i).gameObject.SetActive(true);
             }
             
             GameObject go = Instantiate(spider, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            go.transform.SetParent(transform);
             //Vector2 vec = new Vector2(-1, 1);
             //go.GetComponent<Rigidbody2D>().AddForce(vec.normalized * 8, ForceMode2D.Impulse);
 

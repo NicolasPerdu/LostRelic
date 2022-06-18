@@ -18,8 +18,8 @@ public class Jelly : MonoBehaviour
     {
         buffer = buffer + Time.deltaTime;
         if (buffer > delay) {
-            Debug.Log("bullet : " + bul.name);
             GameObject go = Instantiate(bul, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            go.transform.SetParent(transform);
             Vector2 vec = new Vector2(-1, 1);
             go.GetComponent<Rigidbody2D>().AddForce(vec.normalized * 6, ForceMode2D.Impulse);
 
