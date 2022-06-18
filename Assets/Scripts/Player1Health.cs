@@ -57,7 +57,7 @@ public class Player1Health : MonoBehaviour
     public void PlayerHurt(int damage)
     {
         health -= damage;
-        rb.velocity = Vector2.left*fallforce;
+        rb.velocity = new Vector2(-1, 1) * fallforce;
         StartCoroutine(ResetVelocity());
                 
 
@@ -65,7 +65,7 @@ public class Player1Health : MonoBehaviour
 
     IEnumerator ResetVelocity()
     {
-        yield return new WaitForSeconds(1.00f);
+        yield return new WaitForSeconds(0.10f);
         rb.velocity = Vector2.zero;
     }
 

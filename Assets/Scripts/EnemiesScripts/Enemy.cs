@@ -123,15 +123,15 @@ public class Enemy : PhysicsObject
     {
         if (collision.collider.CompareTag("Player1"))
         {
-            collision.collider.GetComponent<Player1Health>().PlayerHurt(enemyCollisiondamage);
             direction = -direction;
+            collision.collider.GetComponent<Player1Health>().PlayerHurt(enemyCollisiondamage);
             
         }
 
         if (collision.collider.CompareTag("Player2"))
         {
-            collision.collider.GetComponent<Player2Health>().PlayerHurt(enemyCollisiondamage);
             direction = -direction;
+            collision.collider.GetComponent<Player2Health>().PlayerHurt(enemyCollisiondamage);
 
         }
     }

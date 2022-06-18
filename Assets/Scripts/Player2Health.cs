@@ -54,14 +54,14 @@ public class Player2Health : MonoBehaviour
     public void PlayerHurt(int damage)
     {
         health -= damage;
-        rb.velocity = Vector2.right*fallforce;
+        rb.velocity = new Vector2(-1,1)*fallforce;
         StartCoroutine(ResetVelocity());
 
 
     }
     IEnumerator ResetVelocity()
     {
-        yield return new WaitForSeconds(1.00f);
+        yield return new WaitForSeconds(0.10f);
         rb.velocity = Vector2.zero;
     }
     public void HealthBarActive(bool isActive)
