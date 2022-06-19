@@ -1219,6 +1219,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: -4668204758637526539, guid: 8190a8bd5626c75409615c2c5de91e2e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4638366715702626034, guid: 8190a8bd5626c75409615c2c5de91e2e, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -2554,7 +2558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &209148774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2934,7 +2938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &282302429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4313,7 +4317,7 @@ MonoBehaviour:
   healthBar: {fileID: 2137983534}
   health: 100
   fallforce: 10
-  color: {r: 0.9886545, g: 1, b: 0, a: 0}
+  color: {r: 0, g: 0.9803922, b: 0.9843138, a: 0}
   colorAlpha: 255
 --- !u!4 &578870250 stripped
 Transform:
@@ -12491,7 +12495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4888894067345746139
 Transform:
   m_ObjectHideFlags: 0
