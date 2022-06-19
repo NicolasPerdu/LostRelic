@@ -18,6 +18,7 @@ public class Timer : MonoBehaviour
     public GameObject normalworld;
     public GameObject hellplayer;
     public GameObject normalplayer;
+    
 
     private bool swapPlayer;//To determine whether to swap the player or not
 
