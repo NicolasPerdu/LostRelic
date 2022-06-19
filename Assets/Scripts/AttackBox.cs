@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackBox : MonoBehaviour
 {
     [SerializeField] private int weaponDamage;
+    public GameObject destroyEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,12 @@ public class AttackBox : MonoBehaviour
             collision.gameObject.GetComponent<Enemy>().Health -= weaponDamage + Player1.Instance.AttackPower ;
             collision.gameObject.GetComponent<Enemy>().Die();
              
+        }
+        if(collision.gameObject.GetComponent<glass>())
+        {
+            Destroy(collision.gameObject);
+            Instantiate(destroyEffect, collision.transform.position, collision.transform.rotation);
+            
         }
 
     }

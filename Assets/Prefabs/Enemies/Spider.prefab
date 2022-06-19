@@ -325,7 +325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3116353024939970057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.025, y: -0.251, z: 0}
+  m_LocalPosition: {x: -0.538, y: -0.251, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 6570430969667530024}
   - component: {fileID: 6570430969667530027}
   - component: {fileID: 8912626936286836443}
-  - component: {fileID: 1982222165776489738}
+  - component: {fileID: 2126853610536595573}
   m_Layer: 6
   m_Name: Spider
   m_TagString: Untagged
@@ -950,8 +950,8 @@ MonoBehaviour:
   spider: {fileID: 5319468813655827603}
   lightEnemy: {fileID: 153349901}
   wallRight: {fileID: 5526611829417645705}
---- !u!61 &1982222165776489738
-BoxCollider2D:
+--- !u!70 &2126853610536595573
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -963,19 +963,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06753898, y: -0.075603426}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.135078, y: 0.3891245}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.041479927, y: -0.19047531}
+  m_Size: {x: 1.1972822, y: 0.69787186}
+  m_Direction: 1
 --- !u!1 &6965130056346902514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,7 +1837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2559389792808558636, guid: d96bfc55d383cbb48863b323db1c5523, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: -0.0029740036
+      value: -0.0029739998
       objectReference: {fileID: 0}
     - target: {fileID: -2559389792808558636, guid: d96bfc55d383cbb48863b323db1c5523, type: 3}
       propertyPath: m_Bounds.m_Center.y
@@ -1855,7 +1845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2559389792808558636, guid: d96bfc55d383cbb48863b323db1c5523, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.056049988
+      value: 0.05604998
       objectReference: {fileID: 0}
     - target: {fileID: -2558533372562210899, guid: d96bfc55d383cbb48863b323db1c5523, type: 3}
       propertyPath: m_Bounds.m_Center.x
@@ -3383,15 +3373,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7988921700363068206, guid: d96bfc55d383cbb48863b323db1c5523, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.0013383627
+      value: -0.0013382956
       objectReference: {fileID: 0}
     - target: {fileID: 7988921700363068206, guid: d96bfc55d383cbb48863b323db1c5523, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.031379964
+      value: 0.031379968
       objectReference: {fileID: 0}
     - target: {fileID: 7988921700363068206, guid: d96bfc55d383cbb48863b323db1c5523, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 0.118642
+      value: 0.11864199
       objectReference: {fileID: 0}
     - target: {fileID: 8001887076019388928, guid: d96bfc55d383cbb48863b323db1c5523, type: 3}
       propertyPath: m_Layer

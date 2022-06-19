@@ -49,7 +49,7 @@ public class Enemy : PhysicsObject
         isWallRight = Physics2D.OverlapCircle(wallRight.position, .1f, whatIsWall);
         
         //check right ledge
-        rightLedgeRayCastHit = Physics2D.Raycast(new Vector2(transform.position.x + rayCastOffest.x, transform.position.y+rayCastOffest.y),Vector2.down, rayCastLenght);
+        /*rightLedgeRayCastHit = Physics2D.Raycast(new Vector2(transform.position.x + rayCastOffest.x, transform.position.y+rayCastOffest.y),Vector2.down, rayCastLenght);
         Debug.DrawRay(new Vector2(transform.position.x + rayCastOffest.x, transform.position.y + rayCastOffest.y), Vector2.down * rayCastLenght, Color.red);
         if (rightLedgeRayCastHit.collider == null) 
         {
@@ -79,7 +79,7 @@ public class Enemy : PhysicsObject
             direction = 1;
 
         }
-
+        */
         //Olteanu was here(This is a raycast to check a wall masklayer, is changing direction, with a bool)
         if (isWallRight)
         {
