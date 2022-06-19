@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
                 {
                     _anim.SetTrigger("attack");
                     canAttack = false;
+                    StartCoroutine(ActivateAttack());
                 }
 
                 if (Input.GetKeyDown(KeyCode.U))

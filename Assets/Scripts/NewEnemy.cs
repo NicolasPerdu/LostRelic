@@ -7,14 +7,10 @@ public class NewEnemy : MonoBehaviour
    
     public float speed = 3f;
     public GameObject spider,deathEffect,lightEnemy;
-    public GameObject startpoint;
-    public GameObject endpoint;
-    private float distance;
-    private float dir = -3f;
-    private float lastdistance;
+  
     public int collisiondamage = 20;
     public float health;
-    private float xbound = 25;
+   
 
     
     
@@ -22,7 +18,7 @@ public class NewEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
+        health = 100;
         
         spider.SetActive(true);
     }
@@ -30,24 +26,10 @@ public class NewEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      distance = Vector2.Distance(this.transform.position, endpoint.transform.position);
-        lastdistance= Vector2.Distance(this.transform.position, startpoint.transform.position);
-       
+     
         transform.Translate(Vector2.left* speed * Time.deltaTime);
-      if (distance <= 3.00f )
-        {
-            speed =dir;
-            transform.localScale = new Vector3(-1, transform.localScale.y);
-            
-        }
-        else if( lastdistance <= 3.00f)
-        {
-
-            speed =-dir;
-            transform.localScale = new Vector3(1, transform.localScale.y);
-        }
-
-        
+        Die();
+             
 
     }
 
@@ -84,6 +66,14 @@ public class NewEnemy : MonoBehaviour
             speed = -speed;
             transform.localScale = new Vector3((-1)*transform.localScale.x, transform.localScale.y);
             collision.collider.GetComponent<HealthController>().PlayerHurt(collisiondamage);
+              
+            
+           if(collision.gameObject.GetComponent<PlayerController>()._anim.GetCurrentAnimatorStateInfo(0).IsName("Player Attack"))
+           {
+                Debug.Log("Hit");
+                health -= 50;
+            }
+            
         }
     }
     
