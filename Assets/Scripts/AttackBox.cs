@@ -20,10 +20,12 @@ public class AttackBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Enemy>()) //FindObjectOfType<Enemy>().gameObject)
+        if (collision.gameObject.CompareTag("Enemy")) //FindObjectOfType<Enemy>().gameObject)
         {
             //collision.gameObject.GetComponent<Enemy>().Health -= weaponDamage + Player1.Instance.AttackPower ;
             //collision.gameObject.GetComponent<Enemy>().Die(); 
+            collision.gameObject.GetComponent<NewEnemy>().health -= weaponDamage;
+            
         }
 
     }
