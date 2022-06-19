@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackBox : MonoBehaviour
 {
     [SerializeField] private int weaponDamage;
+    public GameObject effect;
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +29,16 @@ public class AttackBox : MonoBehaviour
             
         }
 
+        if(collision.gameObject.CompareTag("Glass"))
+        {
+            Destroy(collision.gameObject);
+            Instantiate(effect, collision.gameObject.transform.position, collision.gameObject.transform.rotation); 
+        }
+
+        /*if(collision.gameObject.CompareTag("Enemy2"))
+        {
+            //collision.gameObject.GetComponent<NewEnemy2>().health -= weaponDamage;
+        }
+        */
     }
 }
