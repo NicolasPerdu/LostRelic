@@ -53,12 +53,11 @@ public class HealthController : MonoBehaviour
 
     public void PlayerHurt(int damage)
     {
-        if (canTakeDamage)
-        {
-            health -= damage;
+        
+          health -= damage;
             rb.velocity = new Vector2(-1, 1) * fallforce;
             StartCoroutine(ResetVelocity());
-        }
+        
     }
     IEnumerator ResetVelocity()
     {

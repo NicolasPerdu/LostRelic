@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
                 {
                     _anim.SetTrigger("attack");
                     canAttack = false;
+                    StartCoroutine(ActivateAttack());
                 }
 
                 if (Input.GetKeyDown(KeyCode.U))
@@ -104,12 +105,16 @@ public class PlayerController : MonoBehaviour
         if (other.transform.name == "ground") {
             IsGrounded = true;
         }
+        if (other.transform.CompareTag("Ground"))
+            IsGrounded = true;
     }
 
     void OnCollisionExit2D(Collision2D other) {
         if(other.transform.name == "ground") {
             IsGrounded = false;
-        } 
+        }
+        if (other.transform.CompareTag("Ground"))
+            IsGrounded = true;
     }
 
     private void Jump()

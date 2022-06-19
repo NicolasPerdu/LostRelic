@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class Timer : MonoBehaviour
@@ -7,7 +8,7 @@ public class Timer : MonoBehaviour
     public GameObject  levelwon;
   
     public float timetochange;
-    private float timeInMinute = 5f;
+    private float timeInMinute = 2f;
     private float timeinSeconds ;
     private float secondsInMinute = 59f;
     private float starttime;
@@ -18,6 +19,7 @@ public class Timer : MonoBehaviour
     public GameObject normalworld;
     public GameObject hellplayer;
     public GameObject normalplayer;
+    
 
     private bool swapPlayer;//To determine whether to swap the player or not
 
@@ -61,6 +63,10 @@ public class Timer : MonoBehaviour
             starttime = 0;
             portalCount = 1.5f;
         }
+        if(timeInMinute==0)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     
@@ -71,6 +77,7 @@ public class Timer : MonoBehaviour
             hellworld.SetActive(false);
             normalworld.SetActive(true);
             normalplayer.GetComponent<PlayerController>().ActiveInScene(true);
+            
         } else {
             hellworld.SetActive(true);
             normalworld.SetActive(false);
