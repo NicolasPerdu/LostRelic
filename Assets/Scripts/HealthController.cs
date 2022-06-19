@@ -67,7 +67,7 @@ public class HealthController : MonoBehaviour
 
     public void HealthBarActive(bool isActive)
     {
-        canTakeDamage = isActive;
-        healthBar.color = color;
+      //  canTakeDamage = isActive;
+       // healthBar.color = color;
     }
 }
