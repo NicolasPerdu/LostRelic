@@ -72,6 +72,7 @@ public class Timer : MonoBehaviour
             hellworld.SetActive(false);
             normalworld.SetActive(true);
             normalplayer.GetComponent<PlayerController>().ActiveInScene(true);
+            
         } else {
             hellworld.SetActive(true);
             normalworld.SetActive(false);

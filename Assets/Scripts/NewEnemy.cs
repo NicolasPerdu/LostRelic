@@ -14,6 +14,9 @@ public class NewEnemy : MonoBehaviour
     private float lastdistance;
     public int collisiondamage = 20;
     public float health;
+    private float xbound = 25;
+
+    
     
     
     // Start is called before the first frame update
@@ -31,7 +34,7 @@ public class NewEnemy : MonoBehaviour
         lastdistance= Vector2.Distance(this.transform.position, startpoint.transform.position);
        
         transform.Translate(Vector2.left* speed * Time.deltaTime);
-        if (distance <= 3.00f )
+      if (distance <= 3.00f )
         {
             speed =dir;
             transform.localScale = new Vector3(-1, transform.localScale.y);
@@ -44,7 +47,7 @@ public class NewEnemy : MonoBehaviour
             transform.localScale = new Vector3(1, transform.localScale.y);
         }
 
-
+        
 
     }
 
@@ -61,13 +64,29 @@ public class NewEnemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.CompareTag("Player"))
+        if(collision.collider.CompareTag("Ground"))
+        {
+            speed = -speed;
+            transform.localScale = new Vector3((-1) * transform.localScale.x, transform.localScale.y);
+
+        }
+        if(collision.collider.CompareTag("Enemy"))
+        {
+            speed = -speed;
+            transform.localScale = new Vector3((-1) * transform.localScale.x, transform.localScale.y);
+
+        }
+
+
+
+        if (collision.collider.CompareTag("Player"))
         {
             speed = -speed;
             transform.localScale = new Vector3((-1)*transform.localScale.x, transform.localScale.y);
             collision.collider.GetComponent<HealthController>().PlayerHurt(collisiondamage);
         }
     }
+    
 
 
 
