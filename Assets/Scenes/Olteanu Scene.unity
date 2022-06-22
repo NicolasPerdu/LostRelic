@@ -1456,7 +1456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -606, y: -55}
+  m_AnchoredPosition: {x: -658, y: -104}
   m_SizeDelta: {x: 594.7998, y: 39}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &119379114
@@ -7379,7 +7379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelwon: {fileID: 1005642559}
-  timetochange: 10
+  timetochange: 30
   timetext: {fileID: 138564036}
   leveltimetext: {fileID: 605788908}
   hellworld: {fileID: 1706133720}
@@ -10534,7 +10534,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 938fbe53
+  m_ApplyToSortingLayers: 938fbe533ba6247c
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
