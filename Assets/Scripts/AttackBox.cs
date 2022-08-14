@@ -7,38 +7,22 @@ public class AttackBox : MonoBehaviour
     [SerializeField] private int weaponDamage;
     public GameObject effect;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy")) //FindObjectOfType<Enemy>().gameObject)
+        if (collision.gameObject.TryGetComponent<IDamagable>(out var damagable))
         {
-            //collision.gameObject.GetComponent<Enemy>().Health -= weaponDamage + Player1.Instance.AttackPower ;
-            //collision.gameObject.GetComponent<Enemy>().Die(); 
-            collision.gameObject.GetComponent<NewEnemy>().health -= weaponDamage;
+            damagable.TakeDamage(weaponDamage);
             
         }
 
-        if(collision.gameObject.CompareTag("Glass"))
+        if (collision.gameObject.TryGetComponent<IDestroyable>(out  var destroyable))
         {
-            Destroy(collision.gameObject);
+            destroyable.OnPlayerAttack();
             Instantiate(effect, collision.gameObject.transform.position, collision.gameObject.transform.rotation); 
         }
 
-        /*if(collision.gameObject.CompareTag("Enemy2"))
-        {
-            //collision.gameObject.GetComponent<NewEnemy2>().health -= weaponDamage;
-        }
-        */
+       
     }
 }

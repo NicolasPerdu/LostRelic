@@ -14,7 +14,7 @@ public class HealthController : MonoBehaviour
     private Vector2 healthBarOriginalSize;
     private Rigidbody2D rb;
     public float fallforce = 10.0f;
-    private bool canTakeDamage=true;
+    
     public Color color;
     public float colorAlpha;
 

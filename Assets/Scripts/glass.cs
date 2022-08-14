@@ -2,25 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class glass : MonoBehaviour
+public class Glass : MonoBehaviour,IDestroyable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+     
 
-    // Update is called once per frame
-    void Update()
+    public void OnPlayerAttack()
     {
-        
-    }
-
-    void OnCollisionEnter2D(Collision2D col) {
-        if (col.gameObject.name == "Player") {
-            if (col.gameObject.GetComponent<PlayerController>()._anim.GetCurrentAnimatorStateInfo(0).IsName("Player Attack")) {
-                Destroy(gameObject);
-            }
-        }
+        Destroy(gameObject);
     }
 }

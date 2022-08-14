@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewEnemy : MonoBehaviour
+public class NewEnemy : MonoBehaviour,IDamagable
 {
    
     public float speed = 3f;
@@ -76,11 +76,9 @@ public class NewEnemy : MonoBehaviour
             
         }
     }
-    
 
-
-
-
-
-
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+    }
 }
