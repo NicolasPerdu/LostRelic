@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
     {
-
+    private const float attackResponsetime = 0.250f;
     [SerializeField] private float horizontalSpeed;
     [SerializeField] private float verticalSpeed;
     [SerializeField] private int attackPower;
@@ -45,7 +45,8 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate() 
     {
         //  transform.position += new Vector3(body.velocity.x, body.velocity.y, 0) * Time.deltaTime;
-        body.velocity = new Vector2(Input.GetAxis("Horizontal") * horizontalSpeed, body.velocity.y);
+        if(canAttack)
+            body.velocity = new Vector2(Input.GetAxis("Horizontal") * horizontalSpeed, body.velocity.y);
 
         
     }
@@ -139,6 +140,7 @@ public class PlayerController : MonoBehaviour
     
     private IEnumerator ActivateAttack()
     {
+        yield return new WaitForSeconds(attackResponsetime);//attack response time is used to make the attack more responsive
         attackBox.SetActive(true);
         yield return new WaitForSeconds(attackDuration);
         attackBox.SetActive(false);
