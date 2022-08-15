@@ -8,13 +8,17 @@ public class Timer : MonoBehaviour
     public GameObject  levelwon;
   
     public float timetochange;
+
     private float timeInMinute = 2f;
     private float timeinSeconds ;
     private float secondsInMinute = 59f;
     private float starttime;
+
     public Text timetext;
     public Text leveltimetext;
+
     private float portalCount = 0.0f;
+    
     public GameObject hellworld;
     public GameObject normalworld;
     public GameObject hellplayer;
@@ -33,43 +37,51 @@ public class Timer : MonoBehaviour
     }
 
     void Update()
-    {   
-        timeinSeconds -=Time.deltaTime;
-        if (timeinSeconds <= 0)
-        {
-            timeInMinute -= 1;
-            timeinSeconds = secondsInMinute;
+    {
+        CountTime();
+        UpdateTimeText();
 
-        }
-
-        leveltimetext.text = (Mathf.Round (timeInMinute) + ":" + Mathf.Round(timeinSeconds)).ToString();
-
-        timetext.text = Mathf.Round(starttime).ToString();
-        starttime -= Time.deltaTime;
-       
-        if(starttime<=0)
+        if (starttime <= 0)
         {
             swapPlayer = !swapPlayer;
             starttime = timetochange;
             ChangePlayer();
         }
 
-        if(portalCount>=2)
+        if (portalCount >= 2)
         {
             levelwon.SetActive(true);
         }
-        if(portalCount==1)
+        if (portalCount == 1)
         {
             starttime = 0;
             portalCount = 1.5f;
         }
-        if(timeInMinute==0)
+        if (timeInMinute == 0)
         {
             SceneManager.LoadScene(0);
         }
     }
 
-    
+    private void CountTime()
+    {
+        timeinSeconds -= Time.deltaTime;
+        if (timeinSeconds <= 0)
+        {
+            timeInMinute -= 1;
+            timeinSeconds = secondsInMinute;
+
+        }      
+        starttime -= Time.deltaTime;
+    }
+
+
+    private void UpdateTimeText()
+    {
+        leveltimetext.text = (Mathf.Round(timeInMinute) + ":" + Mathf.Round(timeinSeconds)).ToString();
+
+        timetext.text = Mathf.Round(starttime).ToString();
+    }
 
     void ChangePlayer()
     {
