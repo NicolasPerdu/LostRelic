@@ -6505,7 +6505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ded35863d384c1489d6fcdebbc8f742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canflip: 0
+  changeDir: 0
   patrolspeed: 2
   groundMask:
     serializedVersion: 2
@@ -6525,8 +6525,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   spider: {fileID: 9127242162529822479}
-  deathEffect: {fileID: 0}
-  patrolLight: {fileID: 0}
+  deathEffect: {fileID: 7213640323019198639, guid: 2cd2f37e0044c894aa5c12c016e0d6ac, type: 3}
+  patrolLight: {fileID: 3997216045492628625}
 --- !u!114 &893460290973006158
 MonoBehaviour:
   m_ObjectHideFlags: 0
