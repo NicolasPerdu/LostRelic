@@ -4,45 +4,45 @@ using UnityEngine;
 
 public class SpiderPatrol : MonoBehaviour
 {
-    public bool canflip;
+    public bool changeDir;
     [SerializeField] private float patrolspeed;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Transform groundpoint;
-    private float radius = 0.5f;
+    private readonly float radius = 0.5f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        canflip = false;
+        changeDir = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
-        Flip();
+        ChangeMovementDirection();
 
     }
 
     private void Move()
     {
-        transform.Translate(Vector2.left * patrolspeed * Time.deltaTime);
+        transform.Translate(patrolspeed * Time.deltaTime * Vector2.left);
     }
 
-    private void Flip()
+    private void ChangeMovementDirection()
     {
-        if (canflip)
+        if (changeDir)
         {
             transform.localScale = new Vector3(transform.localScale.x * (-1), transform.localScale.y, transform.localScale.z);
             patrolspeed *= (-1);
-            canflip = false;
+            changeDir = false;
         }
        
     }
 
     private void FixedUpdate()
     {
-        canflip = Physics2D.OverlapCircle(groundpoint.position, radius, groundMask);
+        changeDir = Physics2D.OverlapCircle(groundpoint.position, radius, groundMask);
     }
 }

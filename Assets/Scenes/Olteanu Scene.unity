@@ -2342,8 +2342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331cb67f8df787c428cbb43ca561e07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 3.5
-  verticalSpeed: 4
+  horizontalSpeed: 5
+  verticalSpeed: 5
   attackPower: 25
   attackDuration: 0.1
   attackBox: {fileID: 4888894067345746138}
@@ -4061,8 +4061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2137983534}
-  health: 100
-  fallforce: 10
+  currentHealth: 0
   color: {r: 0, g: 0.9803922, b: 0.9843138, a: 0}
   colorAlpha: 255
 --- !u!1 &583727501
@@ -11183,8 +11182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 6961976416304749848}
-  health: 100
-  fallforce: 2
+  currentHealth: 0
   color: {r: 0.9921569, g: 0.909804, b: 0.015686275, a: 0}
   colorAlpha: 255
 --- !u!114 &4613943440614032565

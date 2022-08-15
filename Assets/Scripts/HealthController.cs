@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class HealthController : MonoBehaviour
 {
     [SerializeField] private Image healthBar;
-    [SerializeField] private int health;
+    [SerializeField] private int currentHealth;
 
 
-    public int Health { get => health; set => health = value; }
+   
     private Vector2 healthBarOriginalSize;
     private Rigidbody2D rb;
-    public float fallforce = 10.0f;
+    private readonly float collissionForce = 10.0f;
     
     public Color color;
     public float colorAlpha;
@@ -24,6 +24,7 @@ public class HealthController : MonoBehaviour
 
     void Start()
     {
+        currentHealth = maxHealth;
         healthBarOriginalSize = healthBar.rectTransform.sizeDelta;
         UpdateUI();
         rb = GetComponent<Rigidbody2D>();           
@@ -39,7 +40,7 @@ public class HealthController : MonoBehaviour
     // Update is called once per frame
     private void Die()
     {
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
             SceneManager.LoadScene("Olteanu Scene");
@@ -47,19 +48,19 @@ public class HealthController : MonoBehaviour
     }
     public void UpdateUI()
     {
-        float healthBarSize = healthBarOriginalSize.x * ((float)Health / (float)maxHealth);
+        float healthBarSize = healthBarOriginalSize.x * ((float)currentHealth / (float)maxHealth);
         healthBar.rectTransform.sizeDelta = new Vector2(healthBarSize, healthBar.rectTransform.sizeDelta.y);
     }
 
     public void PlayerHurt(int damage)
     {
         
-          health -= damage;
-            rb.velocity = new Vector2(-1, 1) * fallforce;
-            StartCoroutine(ResetVelocity());
+          currentHealth -= damage;
+            rb.velocity = new Vector2(-1, 1) * collissionForce;
+            StartCoroutine(ResetVelocityCoroutine());
         
     }
-    IEnumerator ResetVelocity()
+    IEnumerator ResetVelocityCoroutine()
     {
         yield return new WaitForSeconds(0.10f);
         rb.velocity = Vector2.zero;

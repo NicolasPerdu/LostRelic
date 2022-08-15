@@ -42,8 +42,12 @@ public class PlayerController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate() {
-        transform.position += new Vector3(body.velocity.x, body.velocity.y, 0) * Time.deltaTime;
+    void FixedUpdate() 
+    {
+        //  transform.position += new Vector3(body.velocity.x, body.velocity.y, 0) * Time.deltaTime;
+        body.velocity = new Vector2(Input.GetAxis("Horizontal") * horizontalSpeed, body.velocity.y);
+
+        
     }
 
     // Update is called once per frame
@@ -59,7 +63,6 @@ public class PlayerController : MonoBehaviour
         {
             if (canMove)
             {
-                body.velocity = new Vector2(Input.GetAxis("Horizontal") * horizontalSpeed, body.velocity.y);
                 if (body.velocity.x < -0.1)
                 {
                     transform.localScale = new Vector3(-1, transform.localScale.y);
@@ -75,7 +78,7 @@ public class PlayerController : MonoBehaviour
                     Jump();
                 }
 
-                if (Input.GetButtonDown("Fire1"))
+                if (Input.GetButtonDown("Fire1") && IsGrounded)
                 {
                     _anim.SetTrigger("attack");
                     canAttack = false;

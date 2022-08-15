@@ -14,7 +14,7 @@ public class CameraControll : MonoBehaviour
     public float smoothness;
     public Vector3 offset;
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         Vector3 desirePosition = target.position + offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desirePosition, smoothness * Time.deltaTime);
