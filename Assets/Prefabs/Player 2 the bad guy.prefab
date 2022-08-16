@@ -123,7 +123,6 @@ GameObject:
   - component: {fileID: 3840171290164863453}
   - component: {fileID: 3840171290164863441}
   - component: {fileID: 3840171290164863447}
-  - component: {fileID: 3840171290164863446}
   m_Layer: 7
   m_Name: Player 2 the bad guy
   m_TagString: Player
@@ -178,7 +177,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 3840171290164863454}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6a4f880dcb8b4c843af442508c05fa1e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -251,27 +250,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   health: 100
---- !u!114 &3840171290164863446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3840171290164863454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9524acc01326f0f438ef1c4421a4c494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minGroundNormalY: 0.65
-  gravityModifier: 2.8
-  horizontalSpeed: 5
-  verticalSpeed: 12
-  attackPower: 25
-  attackDuration: 0.1
-  attackBox: {fileID: 3840171291300597321}
-  _anim: {fileID: 0}
-  canMove: 0
+  fallforce: 10
+  color: {r: 0, g: 0, b: 0, a: 0}
+  colorAlpha: 0
 --- !u!1 &3840171291300597321
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,3 +400,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponDamage: 50
+  effect: {fileID: 0}

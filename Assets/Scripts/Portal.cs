@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    private float triggerCount = 1.00f;
+    private readonly float triggerCount = 1.00f;
     private Timer timer;
 
     private void Start()

@@ -2,24 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Egg : MonoBehaviour
+public class Egg : MonoBehaviour,IDestroyable
 {
     double delay = 5, buffer = 0;
     public GameObject spider;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    void OnCollisionEnter2D(Collision2D col) {
-        if (col.gameObject.name == "Player") {
-            if (col.gameObject.GetComponent<PlayerController>()._anim.GetCurrentAnimatorStateInfo(0).IsName("Player Attack")) {
-                Destroy(gameObject);
-            }
-        }
-    }
+    
+   
 
     // Update is called once per frame
     void Update()
@@ -45,5 +34,10 @@ public class Egg : MonoBehaviour
 
             buffer = 0;
         }
+    }
+
+    public void OnPlayerAttack()
+    {
+        Destroy(this.gameObject);
     }
 }
